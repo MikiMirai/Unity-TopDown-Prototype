@@ -19,10 +19,10 @@ public class TopDownController : MonoBehaviour
     private PlayerControls controls;
 
     [Header("Optional")]
-    public Transform debugAimTarget; // visual helper (e.g., a small sphere)
+    public Transform debugAimTarget; // Visual helper
 
     private Vector2 moveInput;
-    private Vector2 lookStick; // gamepad look
+    private Vector2 lookStick; // Gamepad look
 
     private void Awake()
     {
@@ -49,6 +49,7 @@ public class TopDownController : MonoBehaviour
         HandleAiming();
     }
 
+#region Movement
     // -------- Movement --------
     private void HandleMovement()
     {
@@ -66,7 +67,9 @@ public class TopDownController : MonoBehaviour
         Vector3 moveDir = camForward * moveInput.y + camRight * moveInput.x;
         controller.Move(moveDir * moveSpeed * Time.deltaTime);
     }
+#endregion
 
+#region Aiming
     // -------- Aiming --------
     private void HandleAiming()
     {
@@ -105,7 +108,9 @@ public class TopDownController : MonoBehaviour
 
         if (debugAimTarget) debugAimTarget.position = worldPoint;
     }
+#endregion
 
+#region Shooting
     // -------- Shooting --------
     private void Shoot()
     {
@@ -116,4 +121,5 @@ public class TopDownController : MonoBehaviour
         if (rb)
             rb.linearVelocity = firePoint.forward * projectileSpeed;
     }
+#endregion
 }
