@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7211131504944971000}
   - component: {fileID: 6408326509725792265}
   - component: {fileID: 1372040389309217262}
+  - component: {fileID: 3647278582131312793}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -164,54 +165,54 @@ MonoBehaviour:
   - m_Vertices: 0b0000000e00000012000000
   m_SharedTextures: []
   m_Positions:
-  - {x: -0.125, y: -0.125, z: 0.5}
-  - {x: 0.125, y: -0.125, z: 0.5}
-  - {x: -0.125, y: 0.125, z: 0.5}
-  - {x: 0.125, y: 0.125, z: 0.5}
-  - {x: 0.125, y: -0.125, z: 0.5}
-  - {x: 0.125, y: -0.125, z: -0.5}
-  - {x: 0.125, y: 0.125, z: 0.5}
-  - {x: 0.125, y: 0.125, z: -0.5}
-  - {x: 0.125, y: -0.125, z: -0.5}
-  - {x: -0.125, y: -0.125, z: -0.5}
-  - {x: 0.125, y: 0.125, z: -0.5}
-  - {x: -0.125, y: 0.125, z: -0.5}
-  - {x: -0.125, y: -0.125, z: -0.5}
-  - {x: -0.125, y: -0.125, z: 0.5}
-  - {x: -0.125, y: 0.125, z: -0.5}
-  - {x: -0.125, y: 0.125, z: 0.5}
-  - {x: -0.125, y: 0.125, z: 0.5}
-  - {x: 0.125, y: 0.125, z: 0.5}
-  - {x: -0.125, y: 0.125, z: -0.5}
-  - {x: 0.125, y: 0.125, z: -0.5}
-  - {x: -0.125, y: -0.125, z: -0.5}
-  - {x: 0.125, y: -0.125, z: -0.5}
-  - {x: -0.125, y: -0.125, z: 0.5}
-  - {x: 0.125, y: -0.125, z: 0.5}
+  - {x: -0.08, y: -0.08, z: 0.35}
+  - {x: 0.08, y: -0.08, z: 0.35}
+  - {x: -0.08, y: 0.08, z: 0.35}
+  - {x: 0.08, y: 0.08, z: 0.35}
+  - {x: 0.08, y: -0.08, z: 0.35}
+  - {x: 0.08, y: -0.08, z: -0.35}
+  - {x: 0.08, y: 0.08, z: 0.35}
+  - {x: 0.08, y: 0.08, z: -0.35}
+  - {x: 0.08, y: -0.08, z: -0.35}
+  - {x: -0.08, y: -0.08, z: -0.35}
+  - {x: 0.08, y: 0.08, z: -0.35}
+  - {x: -0.08, y: 0.08, z: -0.35}
+  - {x: -0.08, y: -0.08, z: -0.35}
+  - {x: -0.08, y: -0.08, z: 0.35}
+  - {x: -0.08, y: 0.08, z: -0.35}
+  - {x: -0.08, y: 0.08, z: 0.35}
+  - {x: -0.08, y: 0.08, z: 0.35}
+  - {x: 0.08, y: 0.08, z: 0.35}
+  - {x: -0.08, y: 0.08, z: -0.35}
+  - {x: 0.08, y: 0.08, z: -0.35}
+  - {x: -0.08, y: -0.08, z: -0.35}
+  - {x: 0.08, y: -0.08, z: -0.35}
+  - {x: -0.08, y: -0.08, z: 0.35}
+  - {x: 0.08, y: -0.08, z: 0.35}
   m_Textures0:
-  - {x: 0.25, y: 0.75}
-  - {x: 0, y: 0.75}
-  - {x: 0.25, y: 1}
+  - {x: 0.16, y: 0.84000003}
+  - {x: 0, y: 0.84000003}
+  - {x: 0.16, y: 1}
   - {x: 0, y: 1}
-  - {x: 1, y: 0.75}
-  - {x: 0, y: 0.75}
-  - {x: 1, y: 1}
+  - {x: 0.7, y: 0.84000003}
+  - {x: 0, y: 0.84000003}
+  - {x: 0.7, y: 1}
   - {x: 0, y: 1}
-  - {x: 0.25, y: 0.75}
-  - {x: 0, y: 0.75}
-  - {x: 0.25, y: 1}
+  - {x: 0.16, y: 0.84000003}
+  - {x: 0, y: 0.84000003}
+  - {x: 0.16, y: 1}
   - {x: 0, y: 1}
-  - {x: 1, y: 0.75}
-  - {x: 0, y: 0.75}
-  - {x: 1, y: 1}
+  - {x: 0.7, y: 0.84000003}
+  - {x: 0, y: 0.84000003}
+  - {x: 0.7, y: 1}
   - {x: 0, y: 1}
   - {x: 0, y: 1}
-  - {x: 0.25, y: 1}
-  - {x: 0, y: 0}
-  - {x: 0.25, y: 0}
-  - {x: 0.25, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0.25, y: 1}
+  - {x: 0.16, y: 1}
+  - {x: 0, y: 0.29999998}
+  - {x: 0.16, y: 0.29999998}
+  - {x: 0.16, y: 0.29999998}
+  - {x: 0, y: 0.29999998}
+  - {x: 0.16, y: 1}
   - {x: 0, y: 1}
   m_Textures2: []
   m_Textures3: []
@@ -249,7 +250,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3549
+  m_VersionIndex: 3695
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -269,8 +270,8 @@ MonoBehaviour:
   m_Shape:
     rid: 6293309212528214256
   m_ShapeRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_UnmodifiedMeshVersion: 3543
-  m_Size: {x: 0.25, y: 0.25, z: 1}
+  m_UnmodifiedMeshVersion: 3683
+  m_Size: {x: 0.16, y: 0.16, z: 0.7}
   m_LocalCenter: {x: 0, y: 0, z: 0}
   references:
     version: 2
@@ -345,7 +346,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.25, y: 0.25, z: 1}
+  m_Size: {x: 0.16, y: 0.16, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &6408326509725792265
 MeshFilter:
@@ -382,3 +383,16 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3647278582131312793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023230804282719145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142bf8a57a42b6b4fb892c5621e8a4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelfDestroy
+  LifeTime: 3
