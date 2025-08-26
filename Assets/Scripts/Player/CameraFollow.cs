@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[ExecuteAlways]
+[RequireComponent(typeof(Camera))]
 public class CameraFollow : MonoBehaviour
 {
     [Header("Target")]
