@@ -329,6 +329,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownController
   moveSpeed: 10
+  acceleration: 20
+  deceleration: 10
+  useSmoothDamp: 0
+  smoothTime: 0.15
+  gravity: -9.81
+  groundedGravity: -2
+  downwardVelocity: {x: 0, y: 0, z: 0}
   rotateSpeedDegPerSec: 720
   projectilePrefab: {fileID: 9023230804282719145, guid: 3d1e503c47a4b3f4098ca9e74e754ced, type: 3}
   firePoint: {fileID: 684428831436695356}

@@ -4,7 +4,13 @@ using UnityEngine.InputSystem;
 public class TopDownController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 5f;
+    public float moveSpeed = 10f;
+    public float acceleration = 20f;   // Ramp-up speed for MoveTowards
+    public float deceleration = 10f;   // Ramp-down speed for MoveTowards
+
+    [Header("SmoothDamp Settings")]
+    public bool useSmoothDamp = false; // Toggle in Inspector
+    public float smoothTime = 0.15f;   // Responsiveness for SmoothDamp
 
     [Header("Gravity")]
     public float gravity = -9.81f;
@@ -27,7 +33,9 @@ public class TopDownController : MonoBehaviour
     public Transform debugAimTarget; // Visual helper
 
     private Vector2 moveInput;
-    private Vector2 lookStick; // Gamepad look
+    private Vector2 lookStick;         // Gamepad look
+    private Vector3 moveVelocity;      // Current horizontal velocity
+    private Vector3 smoothDampVel;     // Ref velocity for SmoothDamp
 
     private void Awake()
     {
@@ -58,20 +66,40 @@ public class TopDownController : MonoBehaviour
     // -------- Movement --------
     private void HandleMovement()
     {
-        // ---- Movement (XZ) ----
-        Vector3 moveDir = Vector3.zero;
-        if (moveInput.sqrMagnitude > 0.01f)
+        // ---- Camera-relative movement ----
+        Vector3 camForward = cam.transform.forward;
+        camForward.y = 0;
+        camForward.Normalize();
+
+        Vector3 camRight = cam.transform.right;
+        camRight.y = 0;
+        camRight.Normalize();
+
+        Vector3 inputDir = camForward * moveInput.y + camRight * moveInput.x;
+        inputDir.Normalize();
+
+        // ---- Target velocity ----
+        Vector3 targetVelocity = inputDir * moveSpeed;
+
+        if (useSmoothDamp)
         {
-            // Camera-relative movement
-            Vector3 camForward = cam.transform.forward;
-            camForward.y = 0;
-            camForward.Normalize();
-
-            Vector3 camRight = cam.transform.right;
-            camRight.y = 0;
-            camRight.Normalize();
-
-            moveDir = camForward * moveInput.y + camRight * moveInput.x;
+            // SmoothDamp version (soft easing, floatier feel)
+            moveVelocity = Vector3.SmoothDamp(
+                moveVelocity, targetVelocity, ref smoothDampVel, smoothTime);
+        }
+        else
+        {
+            // MoveTowards version (more snappy & responsive)
+            if (inputDir.sqrMagnitude > 0.01f)
+            {
+                moveVelocity = Vector3.MoveTowards(
+                    moveVelocity, targetVelocity, acceleration * Time.deltaTime);
+            }
+            else
+            {
+                moveVelocity = Vector3.MoveTowards(
+                    moveVelocity, Vector3.zero, deceleration * Time.deltaTime);
+            }
         }
 
         // ---- Gravity ----
@@ -89,7 +117,7 @@ public class TopDownController : MonoBehaviour
         }
 
         // ---- Apply Movement ----
-        Vector3 finalMove = moveDir * moveSpeed + new Vector3(0, downwardVelocity.y, 0);
+        Vector3 finalMove = moveVelocity + new Vector3(0, downwardVelocity.y, 0);
         controller.Move(finalMove * Time.deltaTime);
     }
 #endregion
