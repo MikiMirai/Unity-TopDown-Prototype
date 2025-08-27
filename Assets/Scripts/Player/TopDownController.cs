@@ -6,6 +6,11 @@ public class TopDownController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 5f;
 
+    [Header("Gravity")]
+    public float gravity = -9.81f;
+    public float groundedGravity = -2f; // Small downward force to keep controller grounded
+    [SerializeField] private Vector3 downwardVelocity;
+
     [Header("Rotation")]
     public float rotateSpeedDegPerSec = 720f;
 
@@ -53,19 +58,39 @@ public class TopDownController : MonoBehaviour
     // -------- Movement --------
     private void HandleMovement()
     {
-        if (moveInput.sqrMagnitude < 0.01f) return;
+        // ---- Movement (XZ) ----
+        Vector3 moveDir = Vector3.zero;
+        if (moveInput.sqrMagnitude > 0.01f)
+        {
+            // Camera-relative movement
+            Vector3 camForward = cam.transform.forward;
+            camForward.y = 0;
+            camForward.Normalize();
 
-        // Camera-relative movement (XZ only)
-        Vector3 camForward = cam.transform.forward;
-        camForward.y = 0;
-        camForward.Normalize();
+            Vector3 camRight = cam.transform.right;
+            camRight.y = 0;
+            camRight.Normalize();
 
-        Vector3 camRight = cam.transform.right;
-        camRight.y = 0;
-        camRight.Normalize();
+            moveDir = camForward * moveInput.y + camRight * moveInput.x;
+        }
 
-        Vector3 moveDir = camForward * moveInput.y + camRight * moveInput.x;
-        controller.Move(moveDir * moveSpeed * Time.deltaTime);
+        // ---- Gravity ----
+        if (controller.isGrounded)
+        {
+            // Reset Y downwardVelocity when grounded
+            downwardVelocity.y = groundedGravity;
+        }
+        else
+        {
+            // Apply gravity with cap
+            downwardVelocity.y += gravity * Time.deltaTime;
+            if (downwardVelocity.y < gravity) // Don’t go faster than gravity itself
+                downwardVelocity.y = gravity;
+        }
+
+        // ---- Apply Movement ----
+        Vector3 finalMove = moveDir * moveSpeed + new Vector3(0, downwardVelocity.y, 0);
+        controller.Move(finalMove * Time.deltaTime);
     }
 #endregion
 
