@@ -19,6 +19,8 @@ public class EnemyAi : MonoBehaviour
 
     //Attacking
     public float timeBetweenAttacks;
+    public float attackUpperForce = 4f;
+    public float attackForwardForce = 28f;
     bool alreadyAttacked;
     public GameObject projectile;
     public Transform attackPosition;
@@ -84,9 +86,9 @@ public class EnemyAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             ///Attack code here
-            Rigidbody rb = Instantiate(projectile, attackPosition.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            Rigidbody rb = Instantiate(projectile, attackPosition.position, attackPosition.transform.rotation).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * attackForwardForce, ForceMode.Impulse);
+            rb.AddForce(transform.up * attackUpperForce, ForceMode.Impulse);
             ///End of attack code
 
             alreadyAttacked = true;

@@ -883,7 +883,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5e69a3622650079439025a18d42d4be9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -928,6 +928,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1093849959}
+  - {fileID: 622297363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &283151191
@@ -976,7 +977,9 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 0.5
+  attackUpperForce: 4
   projectile: {fileID: 9023230804282719145, guid: 3d1e503c47a4b3f4098ca9e74e754ced, type: 3}
+  attackPosition: {fileID: 622297363}
   sightRange: 20
   attackRange: 12
   playerInSightRange: 0
@@ -2783,6 +2786,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -188.344, z: 0}
+--- !u!1 &622297362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622297363}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622297363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622297362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8091202}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 283151190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &681216950
 GameObject:
   m_ObjectHideFlags: 0
@@ -8331,7 +8365,7 @@ PrefabInstance:
       objectReference: {fileID: 2096112630}
     - target: {fileID: 9192174045389400767, guid: 3d1e503c47a4b3f4098ca9e74e754ced, type: 3}
       propertyPath: m_VersionIndex
-      value: 3698
+      value: 3701
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8348,6 +8382,7 @@ SceneRoots:
   - {fileID: 147111152}
   - {fileID: 397632866}
   - {fileID: 1210207070588199154}
+  - {fileID: 283151190}
   - {fileID: 812394856}
   - {fileID: 2101359930}
   - {fileID: 311207479}
@@ -8363,4 +8398,3 @@ SceneRoots:
   - {fileID: 1156799468}
   - {fileID: 3084701885883231921}
   - {fileID: 6488188822180754191}
-  - {fileID: 283151190}
