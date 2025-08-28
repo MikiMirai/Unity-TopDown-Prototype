@@ -4,20 +4,20 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
+    [Header("References")]
     public NavMeshAgent agent;
-
     public Transform player;
-
     public LayerMask whatIsGround, whatIsPlayer;
-
     public float health;
 
     //Patroling
+    [Header("Patroling")]
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
 
     //Attacking
+    [Header("Attacking")]
     public float timeBetweenAttacks;
     public float attackUpperForce = 4f;
     public float attackForwardForce = 28f;
@@ -26,6 +26,7 @@ public class EnemyAi : MonoBehaviour
     public Transform attackPosition;
 
     //States
+    [Header("States")]
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
