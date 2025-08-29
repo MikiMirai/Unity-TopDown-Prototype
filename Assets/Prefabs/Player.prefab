@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2954593295781717204}
   - component: {fileID: 4160537432696149647}
   - component: {fileID: 5271762349607073112}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4452433606288532342}
   - component: {fileID: 404501212662192543}
   - component: {fileID: 6886508708093447928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,11 +265,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6099413615400031947}
+  - component: {fileID: 5627958546503344528}
   - component: {fileID: 2240948120013059299}
   - component: {fileID: 5939621738289737160}
+  - component: {fileID: 5557939168213505107}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,6 +293,26 @@ Transform:
   - {fileID: 684428831436695356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5627958546503344528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8314225596402322282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!143 &2240948120013059299
 CharacterController:
   m_ObjectHideFlags: 0
@@ -341,3 +363,16 @@ MonoBehaviour:
   firePoint: {fileID: 684428831436695356}
   projectileSpeed: 20
   debugAimTarget: {fileID: 0}
+--- !u!114 &5557939168213505107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8314225596402322282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55b7556da7646b458d432675e9d1aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 5
