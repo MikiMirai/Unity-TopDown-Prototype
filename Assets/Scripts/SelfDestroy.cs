@@ -1,14 +1,22 @@
-using System.Collections;
 using UnityEngine;
 
 public class SelfDestroy : MonoBehaviour
 {
+    [Header("Settings")]
     [Tooltip("Time in seconds before the object disappears")]
     [SerializeField] private float LifeTime = 3f;
+    [SerializeField] private string ignoreMask;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Destroy(gameObject, LifeTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag(ignoreMask))
+        {
+            Destroy(gameObject);
+        }
     }
 }
