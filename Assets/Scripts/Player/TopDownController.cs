@@ -36,12 +36,15 @@ public class TopDownController : MonoBehaviour
     private Vector2 lookStick;         // Gamepad look
     private Vector3 moveVelocity;      // Current horizontal velocity
     private Vector3 smoothDampVel;     // Ref velocity for SmoothDamp
+    private bool calculateControls = true;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
         cam = Camera.main;
         controls = new PlayerControls();
+
+        EventManager.OnPlayerDeath += OnGameOverEvent;
 
         // Bind input
         controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
@@ -53,13 +56,26 @@ public class TopDownController : MonoBehaviour
         controls.Player.Attack.performed += ctx => Shoot();
     }
 
+    private void OnDestroy()
+    {
+        EventManager.OnPlayerDeath -= OnGameOverEvent;
+    }
+
     private void OnEnable() => controls.Player.Enable();
     private void OnDisable() => controls.Player.Disable();
 
     private void Update()
     {
-        HandleMovement();
-        HandleAiming();
+        if (calculateControls)
+        {
+            HandleMovement();
+            HandleAiming();
+        }
+    }
+
+    void OnGameOverEvent()
+    {
+        calculateControls = false;
     }
 
 #region Movement
