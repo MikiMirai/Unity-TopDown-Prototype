@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -9,15 +10,14 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     public int CurrentHealth;
 
+    // Events
+    public event Action OnHit;
+
     void Awake()
     {
         CurrentHealth = maxHealth;
 
-        if (effectHandler != null)
-        {
-            TryGetComponent<EffectHandler>(out EffectHandler handlerRef);
-            effectHandler = handlerRef;
-        }
+        effectHandler = GetComponent<EffectHandler>();
     }
 
     public void TakeDamage(int amount)
@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            effectHandler?.StartHitFlash();
+            OnHit?.Invoke();
         }
     }
 
@@ -41,6 +41,17 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject, 1f);
         }
+
         // TODO: Add death logic here (animation, respawn, etc.)
+    }
+
+    public void SubscribeToHitEvent(EffectHandler handler)
+    {
+        OnHit += handler.StartHitFlash; // Subscribe to the OnHit event
+    }
+
+    public void UnsubscribeFromHitEvent(EffectHandler handler)
+    {
+        OnHit -= handler.StartHitFlash; // Unsubscribe from the OnHit event
     }
 }
