@@ -2,16 +2,23 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    // Declare a delegate (event type) for hit events
+    // Declaring global event for Player Death
     public delegate void PlayerDeathEvent();
-
-    // Create the event, which uses the delegate above
     public static event PlayerDeathEvent OnPlayerDeath;
+
+    // Declaring global event for the Toggle of Debug Colliders
+    public delegate void ToggleColliderDebugEvent();
+    public static event ToggleColliderDebugEvent OnToggleColliderDebug;
 
     // Method to trigger the OnEnemyHit event
     public static void TriggerPlayerDeathEvent()
     {
         // Invoke the event if there are subscribers
         OnPlayerDeath?.Invoke();
+    }
+
+    public static void TriggerToggleColliderDebugEvent()
+    {
+        OnToggleColliderDebug?.Invoke();
     }
 }
