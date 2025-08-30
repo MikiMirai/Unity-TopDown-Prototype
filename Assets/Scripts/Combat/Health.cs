@@ -41,6 +41,10 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject, 1f);
         }
+        else
+        {
+            EventManager.TriggerPlayerDeathEvent();
+        }
 
         // TODO: Add death logic here (animation, respawn, etc.)
     }
