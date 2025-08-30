@@ -54,6 +54,7 @@ public class TopDownController : MonoBehaviour
         controls.Player.Look.canceled += ctx => lookStick = Vector2.zero;
 
         controls.Player.Attack.performed += ctx => Shoot();
+        controls.Player.DebugCollider.performed += ctx => TriggerDebugCollider();
     }
 
     private void OnDestroy()
@@ -76,6 +77,11 @@ public class TopDownController : MonoBehaviour
     void OnGameOverEvent()
     {
         calculateControls = false;
+    }
+
+    void TriggerDebugCollider()
+    {
+        GameData.Instance.showDebugColliders = !GameData.Instance.showDebugColliders;
     }
 
 #region Movement

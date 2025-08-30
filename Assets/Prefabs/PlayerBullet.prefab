@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6408326509725792265}
   - component: {fileID: 1372040389309217262}
   - component: {fileID: 5655573290136539994}
+  - component: {fileID: 4652022802889355956}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -250,7 +251,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3749
+  m_VersionIndex: 3761
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -398,3 +399,22 @@ MonoBehaviour:
   damage: 1
   lifetime: 5
   ownerTag: Player
+--- !u!114 &4652022802889355956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023230804282719145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  showColliders: 0
+  selectedCollider: 1
+  boxSize: {x: 0.17, y: 0.17, z: 0.72}
+  sphereRadius: 0.5
+  capsuleHeight: 2
+  capsuleRadius: 0.3
