@@ -10,6 +10,8 @@ public class StageManager : MonoBehaviour
     private void Awake()
     {
         EventManager.OnPlayerDeath += OnGameOver;
+
+        GameData.Instance.ResetLevelData();
     }
 
     private void OnDestroy()
