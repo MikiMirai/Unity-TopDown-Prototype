@@ -477,9 +477,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
   colliderColor: {r: 0, g: 0.5964391, b: 1, a: 1}
-  showColliders: 0
-  selectedCollider: 2
+  colliderType: 2
   boxSize: {x: 1, y: 2, z: 1}
   sphereRadius: 0.1
+  sphereSegments: 12
   capsuleHeight: 2.02
   capsuleRadius: 0.52
+  capsuleSegments: 12

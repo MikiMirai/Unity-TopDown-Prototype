@@ -1225,11 +1225,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
   colliderColor: {r: 0, g: 1, b: 0, a: 1}
-  selectedCollider: 2
+  colliderType: 2
   boxSize: {x: 1, y: 2, z: 1}
   sphereRadius: 0.1
+  sphereSegments: 12
   capsuleHeight: 2.02
   capsuleRadius: 0.52
+  capsuleSegments: 12
 --- !u!1 &307610023
 GameObject:
   m_ObjectHideFlags: 0
@@ -9241,7 +9243,7 @@ PrefabInstance:
       objectReference: {fileID: 686324814}
     - target: {fileID: 6044875700390002161, guid: e9b922d7ef83ef64db1a9403045cb7ab, type: 3}
       propertyPath: m_VersionIndex
-      value: 3764
+      value: 3785
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9371,7 +9373,7 @@ PrefabInstance:
       objectReference: {fileID: 575328058}
     - target: {fileID: 9192174045389400767, guid: 3d1e503c47a4b3f4098ca9e74e754ced, type: 3}
       propertyPath: m_VersionIndex
-      value: 3767
+      value: 3788
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

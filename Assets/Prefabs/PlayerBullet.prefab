@@ -251,7 +251,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3761
+  m_VersionIndex: 3785
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -412,9 +412,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
   colliderColor: {r: 0, g: 1, b: 0, a: 1}
-  showColliders: 0
-  selectedCollider: 1
+  colliderType: 1
   boxSize: {x: 0.17, y: 0.17, z: 0.72}
   sphereRadius: 0.5
+  sphereSegments: 12
   capsuleHeight: 2
   capsuleRadius: 0.3
+  capsuleSegments: 12
