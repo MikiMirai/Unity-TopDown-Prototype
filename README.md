@@ -4,7 +4,7 @@
 # Download
 1. Go to [Latest Release](https://github.com/MikiMirai/Unity-TopDown-Prototype/releases), 
 2. Download the TopDown_b*.7z file uner "Assets"
-3. Extract and open TopDown.exe to play
+3. Extract and open Unity-TopDown-Prototype.exe to play
 
 # Controls:
 - WASD to move around. 
