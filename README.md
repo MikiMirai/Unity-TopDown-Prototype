@@ -20,4 +20,4 @@
 - [ ] Options Screen
 - [ ] Death Screen
 - [ ] Music & Sound Effects
-- [x] Credits Screen
+- [ ] Credits Screen
