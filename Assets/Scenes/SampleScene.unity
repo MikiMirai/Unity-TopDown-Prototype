@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 3236871}
   - component: {fileID: 3236870}
   - component: {fileID: 3236869}
+  - component: {fileID: 3236873}
   m_Layer: 8
   m_Name: Cube (42)
   m_TagString: Untagged
@@ -230,117 +231,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -645.752, z: 0}
---- !u!1 &39523838
-GameObject:
+--- !u!114 &3236873
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 39523842}
-  - component: {fileID: 39523841}
-  - component: {fileID: 39523840}
-  - component: {fileID: 39523839}
-  m_Layer: 8
-  m_Name: Cube (16)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &39523839
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39523838}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_GameObject: {fileID: 3236868}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &39523840
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39523838}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &39523841
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39523838}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &39523842
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39523838}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.5616756, z: -0, w: -0.82735753}
-  m_LocalPosition: {x: 1.5, y: 2.5, z: 65.5}
-  m_LocalScale: {x: 1, y: 6, z: 6.9131575}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1411640812}
-  m_LocalEulerAnglesHint: {x: 0, y: -428.344, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &53940025
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +264,7 @@ GameObject:
   - component: {fileID: 53940028}
   - component: {fileID: 53940027}
   - component: {fileID: 53940026}
+  - component: {fileID: 53940030}
   m_Layer: 8
   m_Name: Cube (18)
   m_TagString: Untagged
@@ -452,6 +364,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -308.344, z: 0}
+--- !u!114 &53940030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53940025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &54668090
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +397,7 @@ GameObject:
   - component: {fileID: 54668093}
   - component: {fileID: 54668092}
   - component: {fileID: 54668091}
+  - component: {fileID: 54668095}
   m_Layer: 8
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -563,6 +497,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -203.344, z: 0}
+--- !u!114 &54668095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54668090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &60916907
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +561,7 @@ GameObject:
   - component: {fileID: 107734266}
   - component: {fileID: 107734265}
   - component: {fileID: 107734264}
+  - component: {fileID: 107734268}
   m_Layer: 8
   m_Name: Cube (9)
   m_TagString: Untagged
@@ -705,6 +661,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -158.344, z: 0}
+--- !u!114 &107734268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107734263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &147111151
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageManager
   gameOverPanel: {fileID: 1455591499}
+  targetFPS: 240
 --- !u!114 &147111154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +852,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee25d70b15471249a8285d378672cbf, type: 3}
+--- !u!1001 &249705777
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.392718
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -78.72195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
 --- !u!1 &267339366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,231 +1042,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267339366}
   m_CullTransparentMesh: 1
---- !u!1 &283151186
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 283151190}
-  - component: {fileID: 283151189}
-  - component: {fileID: 283151188}
-  - component: {fileID: 283151193}
-  - component: {fileID: 283151194}
-  - component: {fileID: 283151192}
-  - component: {fileID: 283151187}
-  - component: {fileID: 283151191}
-  - component: {fileID: 283151195}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &283151187
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &283151188
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5e69a3622650079439025a18d42d4be9, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &283151189
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &283151190
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.15988, y: 1.25, z: 12.94088}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1093849959}
-  - {fileID: 622297363}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &283151191
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 6
-  m_Acceleration: 12
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &283151192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b9ce96ecfb858478737e6e08ca1096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAi
-  agent: {fileID: 283151191}
-  player: {fileID: 1066289001}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  health: 10
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttacks: 0.5
-  attackUpperForce: 4
-  attackForwardForce: 28
-  projectile: {fileID: 5256839968338438675, guid: e9b922d7ef83ef64db1a9403045cb7ab, type: 3}
-  attackPosition: {fileID: 622297363}
-  sightRange: 20
-  attackRange: 12
-  playerInSightRange: 0
-  playerInAttackRange: 0
---- !u!114 &283151193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b46dd3dff63e8144b99d5dd8abe755c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  effectHandler: {fileID: 283151194}
-  isEnemyObject: 1
-  maxHealth: 5
-  CurrentHealth: 0
---- !u!114 &283151194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30cf0d93c7086f5459e9408698a2f2f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EffectHandler
-  enemyRenderer: {fileID: 283151188}
-  hitColor: {r: 1, g: 0.43299997, b: 0.43299997, a: 1}
-  flashDuration: 0.2
---- !u!114 &283151195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283151186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
-  colliderType: 2
-  boxSize: {x: 1, y: 2, z: 1}
-  sphereRadius: 0.1
-  sphereSegments: 12
-  capsuleHeight: 2.02
-  capsuleRadius: 0.52
-  capsuleSegments: 12
 --- !u!1 &307610023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1054,7 @@ GameObject:
   - component: {fileID: 307610026}
   - component: {fileID: 307610025}
   - component: {fileID: 307610024}
+  - component: {fileID: 307610028}
   m_Layer: 8
   m_Name: Cube (28)
   m_TagString: Untagged
@@ -1343,6 +1154,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -413.344, z: 0}
+--- !u!114 &307610028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307610023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &311207476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,7 +1342,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 10, y: 14, z: -10}
+  m_LocalPosition: {x: 43, y: 14, z: -52.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1597,6 +1429,120 @@ MonoBehaviour:
   minFalloff: 1
   max: 2000
   maxFalloff: 1
+--- !u!1001 &333667365
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.371855
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -81.459015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+--- !u!1001 &341005695
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.0253854
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.418068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
 --- !u!1 &397632865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +1849,7 @@ GameObject:
   - component: {fileID: 452365885}
   - component: {fileID: 452365884}
   - component: {fileID: 452365883}
+  - component: {fileID: 452365887}
   m_Layer: 8
   m_Name: Cube (25)
   m_TagString: Untagged
@@ -2002,6 +1949,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -353.344, z: 0}
+--- !u!114 &452365887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452365882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &467753278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +1982,7 @@ GameObject:
   - component: {fileID: 467753281}
   - component: {fileID: 467753280}
   - component: {fileID: 467753279}
+  - component: {fileID: 467753283}
   m_Layer: 8
   m_Name: Cube (14)
   m_TagString: Untagged
@@ -2113,6 +2082,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -368.344, z: 0}
+--- !u!114 &467753283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467753278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &468830183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2115,7 @@ GameObject:
   - component: {fileID: 468830186}
   - component: {fileID: 468830185}
   - component: {fileID: 468830184}
+  - component: {fileID: 468830188}
   m_Layer: 8
   m_Name: Cube (33)
   m_TagString: Untagged
@@ -2224,6 +2215,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -315.753, z: 0}
+--- !u!114 &468830188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468830183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &517161144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,6 +2248,7 @@ GameObject:
   - component: {fileID: 517161147}
   - component: {fileID: 517161146}
   - component: {fileID: 517161145}
+  - component: {fileID: 517161149}
   m_Layer: 8
   m_Name: Cube (37)
   m_TagString: Untagged
@@ -2335,6 +2348,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -420.752, z: 0}
+--- !u!114 &517161149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517161144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
+--- !u!1001 &524833016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.3154216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 71.45826
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
 --- !u!1 &529878507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,6 +2438,7 @@ GameObject:
   - component: {fileID: 529878510}
   - component: {fileID: 529878509}
   - component: {fileID: 529878508}
+  - component: {fileID: 529878512}
   m_Layer: 8
   m_Name: Cube (46)
   m_TagString: Untagged
@@ -2446,6 +2538,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -495.752, z: 0}
+--- !u!114 &529878512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529878507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &530809387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,6 +2571,7 @@ GameObject:
   - component: {fileID: 530809390}
   - component: {fileID: 530809389}
   - component: {fileID: 530809388}
+  - component: {fileID: 530809392}
   m_Layer: 8
   m_Name: Cube (34)
   m_TagString: Untagged
@@ -2557,6 +2671,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -360.753, z: 0}
+--- !u!114 &530809392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530809387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &533224583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,6 +2704,7 @@ GameObject:
   - component: {fileID: 533224586}
   - component: {fileID: 533224585}
   - component: {fileID: 533224584}
+  - component: {fileID: 533224588}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -2668,6 +2804,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -38.344, z: 0}
+--- !u!114 &533224588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533224583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &546624722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +2837,7 @@ GameObject:
   - component: {fileID: 546624725}
   - component: {fileID: 546624724}
   - component: {fileID: 546624723}
+  - component: {fileID: 546624727}
   m_Layer: 8
   m_Name: Cube (15)
   m_TagString: Untagged
@@ -2779,9 +2937,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -443.34302, z: 0}
+--- !u!114 &546624727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546624722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!43 &575328058
 Mesh:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2969,6 +3148,7 @@ GameObject:
   - component: {fileID: 590161588}
   - component: {fileID: 590161587}
   - component: {fileID: 590161586}
+  - component: {fileID: 590161590}
   m_Layer: 8
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -3068,6 +3248,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -218.344, z: 0}
+--- !u!114 &590161590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590161585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!114 &600276459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3102,6 +3303,7 @@ GameObject:
   - component: {fileID: 619695005}
   - component: {fileID: 619695004}
   - component: {fileID: 619695003}
+  - component: {fileID: 619695007}
   m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -3201,37 +3403,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -188.344, z: 0}
---- !u!1 &622297362
-GameObject:
+--- !u!114 &619695007
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 622297363}
-  m_Layer: 0
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &622297363
-Transform:
+  m_GameObject: {fileID: 619695002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
+--- !u!1001 &623412523
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622297362}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.8091202}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 283151190}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.48527
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.7986
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
 --- !u!1 &681216950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,7 +3514,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &686324814
 Mesh:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3453,6 +3702,7 @@ GameObject:
   - component: {fileID: 724819159}
   - component: {fileID: 724819158}
   - component: {fileID: 724819157}
+  - component: {fileID: 724819161}
   m_Layer: 8
   m_Name: Cube (27)
   m_TagString: Untagged
@@ -3552,6 +3802,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -458.34302, z: 0}
+--- !u!114 &724819161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724819156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &754646695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4152,6 +4423,7 @@ GameObject:
   - component: {fileID: 863049305}
   - component: {fileID: 863049304}
   - component: {fileID: 863049303}
+  - component: {fileID: 863049307}
   m_Layer: 8
   m_Name: Cube (20)
   m_TagString: Untagged
@@ -4251,6 +4523,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -308.344, z: 0}
+--- !u!114 &863049307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863049302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &905878853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4263,6 +4556,7 @@ GameObject:
   - component: {fileID: 905878856}
   - component: {fileID: 905878855}
   - component: {fileID: 905878854}
+  - component: {fileID: 905878858}
   m_Layer: 8
   m_Name: Cube (43)
   m_TagString: Untagged
@@ -4362,6 +4656,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -570.752, z: 0}
+--- !u!114 &905878858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905878853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &912670103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,6 +4689,7 @@ GameObject:
   - component: {fileID: 912670106}
   - component: {fileID: 912670105}
   - component: {fileID: 912670104}
+  - component: {fileID: 912670108}
   m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -4473,6 +4789,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -233.344, z: 0}
+--- !u!114 &912670108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912670103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &958621482
 GameObject:
   m_ObjectHideFlags: 0
@@ -4485,6 +4822,7 @@ GameObject:
   - component: {fileID: 958621485}
   - component: {fileID: 958621484}
   - component: {fileID: 958621483}
+  - component: {fileID: 958621487}
   m_Layer: 8
   m_Name: Cube (17)
   m_TagString: Untagged
@@ -4577,13 +4915,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958621482}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.38979095, z: -0, w: -0.9209034}
-  m_LocalPosition: {x: 1.5, y: 2.5, z: 61.75}
+  m_LocalRotation: {x: -0, y: 0.1228819, z: -0, w: -0.9924213}
+  m_LocalPosition: {x: -1.25, y: 2.5, z: 62.75}
   m_LocalScale: {x: 1, y: 6, z: 6.9131584}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411640812}
-  m_LocalEulerAnglesHint: {x: 0, y: -314.117, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -374.117, z: 0}
+--- !u!114 &958621487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958621482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &962164575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4596,6 +4955,7 @@ GameObject:
   - component: {fileID: 962164578}
   - component: {fileID: 962164577}
   - component: {fileID: 962164576}
+  - component: {fileID: 962164580}
   m_Layer: 8
   m_Name: Cube (13)
   m_TagString: Untagged
@@ -4695,6 +5055,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -308.344, z: 0}
+--- !u!114 &962164580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962164575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
+--- !u!1001 &1055052055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.232828
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.0401
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
 --- !u!114 &1062482085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4728,6 +5166,7 @@ GameObject:
   - component: {fileID: 1063058550}
   - component: {fileID: 1063058549}
   - component: {fileID: 1063058548}
+  - component: {fileID: 1063058552}
   m_Layer: 8
   m_Name: Cube (40)
   m_TagString: Untagged
@@ -4827,6 +5266,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -525.752, z: 0}
+--- !u!114 &1063058552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063058547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!4 &1066289001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
@@ -5022,6 +5482,7 @@ GameObject:
   - component: {fileID: 1079987750}
   - component: {fileID: 1079987749}
   - component: {fileID: 1079987748}
+  - component: {fileID: 1079987752}
   m_Layer: 8
   m_Name: Cube (21)
   m_TagString: Untagged
@@ -5121,95 +5582,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -293.344, z: 0}
---- !u!1 &1093849958
-GameObject:
+--- !u!114 &1079987752
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1093849959}
-  - component: {fileID: 1093849962}
-  - component: {fileID: 1093849961}
-  m_Layer: 0
-  m_Name: Eyes
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1093849959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093849958}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.30912018}
-  m_LocalScale: {x: 0.8, y: 0.2, z: 0.5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 283151190}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!23 &1093849961
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093849958}
+  m_GameObject: {fileID: 1079987747}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 6ef80e24c0451a94baf87c7ad4f760cd, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1093849962
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093849958}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!114 &1132904599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5381,6 +5774,7 @@ GameObject:
   - component: {fileID: 1177852024}
   - component: {fileID: 1177852023}
   - component: {fileID: 1177852022}
+  - component: {fileID: 1177852026}
   m_Layer: 8
   m_Name: Cube (36)
   m_TagString: Untagged
@@ -5480,6 +5874,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -375.753, z: 0}
+--- !u!114 &1177852026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177852021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1199875101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5492,6 +5907,7 @@ GameObject:
   - component: {fileID: 1199875104}
   - component: {fileID: 1199875103}
   - component: {fileID: 1199875102}
+  - component: {fileID: 1199875106}
   m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -5591,6 +6007,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -128.344, z: 0}
+--- !u!114 &1199875106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199875101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1266074102
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,6 +6040,7 @@ GameObject:
   - component: {fileID: 1266074105}
   - component: {fileID: 1266074104}
   - component: {fileID: 1266074103}
+  - component: {fileID: 1266074107}
   m_Layer: 8
   m_Name: Cube (29)
   m_TagString: Untagged
@@ -5702,6 +6140,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -375.757, z: 0}
+--- !u!114 &1266074107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266074102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
+--- !u!1001 &1351362758
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.796334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 80.18101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
 --- !u!1 &1359431046
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,6 +6230,7 @@ GameObject:
   - component: {fileID: 1359431049}
   - component: {fileID: 1359431048}
   - component: {fileID: 1359431047}
+  - component: {fileID: 1359431051}
   m_Layer: 8
   m_Name: Cube (41)
   m_TagString: Untagged
@@ -5813,6 +6330,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -600.752, z: 0}
+--- !u!114 &1359431051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359431046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1380421187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5825,6 +6363,7 @@ GameObject:
   - component: {fileID: 1380421190}
   - component: {fileID: 1380421189}
   - component: {fileID: 1380421188}
+  - component: {fileID: 1380421192}
   m_Layer: 8
   m_Name: Cube (44)
   m_TagString: Untagged
@@ -5924,6 +6463,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -510.752, z: 0}
+--- !u!114 &1380421192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380421187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1411640811
 GameObject:
   m_ObjectHideFlags: 0
@@ -5970,7 +6530,6 @@ Transform:
   - {fileID: 962164579}
   - {fileID: 467753282}
   - {fileID: 546624726}
-  - {fileID: 39523842}
   - {fileID: 958621486}
   - {fileID: 53940029}
   - {fileID: 1498379343}
@@ -6038,6 +6597,7 @@ GameObject:
   - component: {fileID: 1436722394}
   - component: {fileID: 1436722393}
   - component: {fileID: 1436722392}
+  - component: {fileID: 1436722396}
   m_Layer: 8
   m_Name: Cube (49)
   m_TagString: Untagged
@@ -6137,6 +6697,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -480.752, z: 0}
+--- !u!114 &1436722396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436722391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1455591499
 GameObject:
   m_ObjectHideFlags: 0
@@ -6225,6 +6806,7 @@ GameObject:
   - component: {fileID: 1462112012}
   - component: {fileID: 1462112011}
   - component: {fileID: 1462112010}
+  - component: {fileID: 1462112014}
   m_Layer: 8
   m_Name: Cube (47)
   m_TagString: Untagged
@@ -6324,6 +6906,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -495.752, z: 0}
+--- !u!114 &1462112014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462112009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1483166235
 GameObject:
   m_ObjectHideFlags: 0
@@ -6472,6 +7075,7 @@ GameObject:
   - component: {fileID: 1498379342}
   - component: {fileID: 1498379341}
   - component: {fileID: 1498379340}
+  - component: {fileID: 1498379344}
   m_Layer: 8
   m_Name: Cube (19)
   m_TagString: Untagged
@@ -6571,6 +7175,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -323.344, z: 0}
+--- !u!114 &1498379344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498379339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1524050937
 GameObject:
   m_ObjectHideFlags: 0
@@ -6583,6 +7208,7 @@ GameObject:
   - component: {fileID: 1524050940}
   - component: {fileID: 1524050939}
   - component: {fileID: 1524050938}
+  - component: {fileID: 1524050942}
   m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -6682,6 +7308,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -158.344, z: 0}
+--- !u!114 &1524050942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524050937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1528178755
 GameObject:
   m_ObjectHideFlags: 0
@@ -6694,6 +7341,7 @@ GameObject:
   - component: {fileID: 1528178758}
   - component: {fileID: 1528178757}
   - component: {fileID: 1528178756}
+  - component: {fileID: 1528178760}
   m_Layer: 8
   m_Name: Cube (23)
   m_TagString: Untagged
@@ -6793,6 +7441,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -263.344, z: 0}
+--- !u!114 &1528178760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528178755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1562151033
 GameObject:
   m_ObjectHideFlags: 0
@@ -6805,6 +7474,7 @@ GameObject:
   - component: {fileID: 1562151036}
   - component: {fileID: 1562151035}
   - component: {fileID: 1562151034}
+  - component: {fileID: 1562151038}
   m_Layer: 8
   m_Name: Cube (31)
   m_TagString: Untagged
@@ -6904,6 +7574,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -330.753, z: 0}
+--- !u!114 &1562151038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562151033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1564260481
 GameObject:
   m_ObjectHideFlags: 0
@@ -7001,6 +7692,7 @@ GameObject:
   - component: {fileID: 1580071726}
   - component: {fileID: 1580071725}
   - component: {fileID: 1580071724}
+  - component: {fileID: 1580071728}
   m_Layer: 8
   m_Name: Cube (30)
   m_TagString: Untagged
@@ -7100,6 +7792,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -360.757, z: 0}
+--- !u!114 &1580071728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580071723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1582235996
 GameObject:
   m_ObjectHideFlags: 0
@@ -7112,6 +7825,7 @@ GameObject:
   - component: {fileID: 1582235999}
   - component: {fileID: 1582235998}
   - component: {fileID: 1582235997}
+  - component: {fileID: 1582236001}
   m_Layer: 8
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -7211,6 +7925,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -143.344, z: 0}
+--- !u!114 &1582236001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582235996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1599194834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7223,6 +7958,7 @@ GameObject:
   - component: {fileID: 1599194837}
   - component: {fileID: 1599194836}
   - component: {fileID: 1599194835}
+  - component: {fileID: 1599194839}
   m_Layer: 8
   m_Name: Cube (45)
   m_TagString: Untagged
@@ -7322,6 +8058,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -495.752, z: 0}
+--- !u!114 &1599194839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599194834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1607043802
 GameObject:
   m_ObjectHideFlags: 0
@@ -7470,6 +8227,7 @@ GameObject:
   - component: {fileID: 1668772210}
   - component: {fileID: 1668772209}
   - component: {fileID: 1668772208}
+  - component: {fileID: 1668772212}
   m_Layer: 8
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -7569,6 +8327,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -278.344, z: 0}
+--- !u!114 &1668772212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668772207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1707281303
 GameObject:
   m_ObjectHideFlags: 0
@@ -7581,6 +8360,7 @@ GameObject:
   - component: {fileID: 1707281306}
   - component: {fileID: 1707281305}
   - component: {fileID: 1707281304}
+  - component: {fileID: 1707281308}
   m_Layer: 8
   m_Name: Cube (11)
   m_TagString: Untagged
@@ -7680,6 +8460,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -233.344, z: 0}
+--- !u!114 &1707281308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707281303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1743947235
 GameObject:
   m_ObjectHideFlags: 0
@@ -7692,6 +8493,7 @@ GameObject:
   - component: {fileID: 1743947238}
   - component: {fileID: 1743947237}
   - component: {fileID: 1743947236}
+  - component: {fileID: 1743947240}
   m_Layer: 8
   m_Name: Cube (24)
   m_TagString: Untagged
@@ -7791,6 +8593,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -323.344, z: 0}
+--- !u!114 &1743947240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743947235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1795115794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7970,6 +8793,7 @@ GameObject:
   - component: {fileID: 1853266572}
   - component: {fileID: 1853266571}
   - component: {fileID: 1853266570}
+  - component: {fileID: 1853266574}
   m_Layer: 8
   m_Name: Cube (22)
   m_TagString: Untagged
@@ -8069,6 +8893,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -323.344, z: 0}
+--- !u!114 &1853266574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853266569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1926938833
 GameObject:
   m_ObjectHideFlags: 0
@@ -8081,6 +8926,7 @@ GameObject:
   - component: {fileID: 1926938836}
   - component: {fileID: 1926938835}
   - component: {fileID: 1926938834}
+  - component: {fileID: 1926938838}
   m_Layer: 8
   m_Name: Cube (35)
   m_TagString: Untagged
@@ -8180,6 +9026,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -345.753, z: 0}
+--- !u!114 &1926938838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926938833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1962579640
 GameObject:
   m_ObjectHideFlags: 0
@@ -8192,6 +9059,7 @@ GameObject:
   - component: {fileID: 1962579643}
   - component: {fileID: 1962579642}
   - component: {fileID: 1962579641}
+  - component: {fileID: 1962579645}
   m_Layer: 8
   m_Name: Cube (10)
   m_TagString: Untagged
@@ -8291,6 +9159,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -158.344, z: 0}
+--- !u!114 &1962579645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962579640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &1964179689
 GameObject:
   m_ObjectHideFlags: 0
@@ -8303,6 +9192,7 @@ GameObject:
   - component: {fileID: 1964179692}
   - component: {fileID: 1964179691}
   - component: {fileID: 1964179690}
+  - component: {fileID: 1964179694}
   m_Layer: 8
   m_Name: Cube (38)
   m_TagString: Untagged
@@ -8402,6 +9292,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -450.752, z: 0}
+--- !u!114 &1964179694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964179689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &2044986332
 GameObject:
   m_ObjectHideFlags: 0
@@ -8414,6 +9325,7 @@ GameObject:
   - component: {fileID: 2044986335}
   - component: {fileID: 2044986334}
   - component: {fileID: 2044986333}
+  - component: {fileID: 2044986337}
   m_Layer: 8
   m_Name: Cube (32)
   m_TagString: Untagged
@@ -8513,6 +9425,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -300.753, z: 0}
+--- !u!114 &2044986337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044986332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &2091289509
 GameObject:
   m_ObjectHideFlags: 0
@@ -8525,6 +9458,7 @@ GameObject:
   - component: {fileID: 2091289512}
   - component: {fileID: 2091289511}
   - component: {fileID: 2091289510}
+  - component: {fileID: 2091289514}
   m_Layer: 8
   m_Name: Cube (26)
   m_TagString: Untagged
@@ -8624,6 +9558,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -368.344, z: 0}
+--- !u!114 &2091289514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091289509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &2092205086
 GameObject:
   m_ObjectHideFlags: 0
@@ -8636,6 +9591,7 @@ GameObject:
   - component: {fileID: 2092205089}
   - component: {fileID: 2092205088}
   - component: {fileID: 2092205087}
+  - component: {fileID: 2092205091}
   m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -8735,6 +9691,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -218.344, z: 0}
+--- !u!114 &2092205091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092205086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &2101359926
 GameObject:
   m_ObjectHideFlags: 0
@@ -8849,6 +9826,7 @@ GameObject:
   - component: {fileID: 2114538091}
   - component: {fileID: 2114538090}
   - component: {fileID: 2114538089}
+  - component: {fileID: 2114538093}
   m_Layer: 8
   m_Name: Cube (39)
   m_TagString: Untagged
@@ -8948,6 +9926,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -465.752, z: 0}
+--- !u!114 &2114538093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114538088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1 &2132693171
 GameObject:
   m_ObjectHideFlags: 0
@@ -8960,6 +9959,7 @@ GameObject:
   - component: {fileID: 2132693174}
   - component: {fileID: 2132693173}
   - component: {fileID: 2132693172}
+  - component: {fileID: 2132693176}
   m_Layer: 8
   m_Name: Cube (48)
   m_TagString: Untagged
@@ -9059,6 +10059,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1411640812}
   m_LocalEulerAnglesHint: {x: 0, y: -510.752, z: 0}
+--- !u!114 &2132693176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132693171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
+  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderType: 1
+  calculateBoxSize: 1
+  boxSize: {x: 1, y: 1, z: 1}
+  sphereRadius: 0.5
+  sphereSegments: 12
+  capsuleHeight: 2
+  capsuleRadius: 0.3
+  capsuleSegments: 12
 --- !u!1001 &1210207070588199154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9069,7 +10090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9077,7 +10098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -42.375
       objectReference: {fileID: 0}
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9243,13 +10264,74 @@ PrefabInstance:
       objectReference: {fileID: 686324814}
     - target: {fileID: 6044875700390002161, guid: e9b922d7ef83ef64db1a9403045cb7ab, type: 3}
       propertyPath: m_VersionIndex
-      value: 3785
+      value: 3797
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b922d7ef83ef64db1a9403045cb7ab, type: 3}
+--- !u!1001 &6400695081367949145
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30.15988
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.94088
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586887777757239947, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331175819450533532, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254940655188576833, guid: ed0568727974d10478b9b74b8953782a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066289001}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed0568727974d10478b9b74b8953782a, type: 3}
 --- !u!1001 &6488188822180754191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9373,7 +10455,7 @@ PrefabInstance:
       objectReference: {fileID: 575328058}
     - target: {fileID: 9192174045389400767, guid: 3d1e503c47a4b3f4098ca9e74e754ced, type: 3}
       propertyPath: m_VersionIndex
-      value: 3788
+      value: 3800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9391,7 +10473,7 @@ SceneRoots:
   - {fileID: 397632866}
   - {fileID: 1210207070588199154}
   - {fileID: 166639307}
-  - {fileID: 283151190}
+  - {fileID: 6400695081367949145}
   - {fileID: 812394856}
   - {fileID: 2101359930}
   - {fileID: 311207479}
@@ -9408,3 +10490,10 @@ SceneRoots:
   - {fileID: 4775989570975644448}
   - {fileID: 6488188822180754191}
   - {fileID: 3084701885883231921}
+  - {fileID: 623412523}
+  - {fileID: 341005695}
+  - {fileID: 1055052055}
+  - {fileID: 524833016}
+  - {fileID: 1351362758}
+  - {fileID: 249705777}
+  - {fileID: 333667365}
