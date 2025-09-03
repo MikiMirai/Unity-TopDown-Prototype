@@ -1,4 +1,3 @@
-using System.Windows;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,8 +6,12 @@ public class StageManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject gameOverPanel;
 
+    [SerializeField] private int targetFPS = 240;
+
     private void Awake()
     {
+        Application.targetFrameRate = targetFPS;
+
         EventManager.OnPlayerDeath += OnGameOver;
 
         GameData.Instance.ResetLevelData();
