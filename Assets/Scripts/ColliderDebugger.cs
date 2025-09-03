@@ -8,6 +8,8 @@ public class ColliderDebugger : MonoBehaviour
     [Header("Debug Settings")]
     [SerializeField] private Color colliderColor = Color.green;
     [SerializeField] private ColliderType colliderType = ColliderType.Sphere;
+    [Tooltip("Automatically calculate the box collider size based on the scale of the object. Leave OFF when you input your own Box Size.")]
+    [SerializeField] private bool calculateBoxSize = true;
 
     // Example sizes – replace with your collider’s values
     [Header("Box")]
@@ -21,6 +23,14 @@ public class ColliderDebugger : MonoBehaviour
     public float capsuleHeight = 2f;
     public float capsuleRadius = 0.3f;
     public int capsuleSegments = 12;
+
+    private void Awake()
+    {
+        if(calculateBoxSize)
+        {
+            boxSize = transform.localScale * 0.498f;
+        }
+    }
 
     void OnRenderObject()
     {
