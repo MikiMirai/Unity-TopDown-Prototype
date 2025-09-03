@@ -137,7 +137,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &3236869
 BoxCollider:
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -270,7 +270,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &53940026
 BoxCollider:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -403,7 +403,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &54668091
 BoxCollider:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -567,7 +567,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &107734264
 BoxCollider:
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -1060,7 +1060,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &307610024
 BoxCollider:
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -1855,7 +1855,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &452365883
 BoxCollider:
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -1988,7 +1988,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &467753279
 BoxCollider:
@@ -2094,7 +2094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -2121,7 +2121,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &468830184
 BoxCollider:
@@ -2227,7 +2227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -2254,7 +2254,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &517161145
 BoxCollider:
@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -2444,7 +2444,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &529878508
 BoxCollider:
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -2577,7 +2577,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &530809388
 BoxCollider:
@@ -2683,7 +2683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -2710,7 +2710,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &533224584
 BoxCollider:
@@ -2816,7 +2816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -2843,7 +2843,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &546624723
 BoxCollider:
@@ -2949,7 +2949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -3154,7 +3154,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &590161586
 BoxCollider:
@@ -3260,7 +3260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -3309,7 +3309,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &619695003
 BoxCollider:
@@ -3415,7 +3415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -3708,7 +3708,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &724819157
 BoxCollider:
@@ -3814,7 +3814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -4429,7 +4429,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &863049303
 BoxCollider:
@@ -4535,7 +4535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -4562,7 +4562,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &905878854
 BoxCollider:
@@ -4668,7 +4668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -4695,7 +4695,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &912670104
 BoxCollider:
@@ -4801,7 +4801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -4828,7 +4828,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &958621483
 BoxCollider:
@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -4961,7 +4961,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &962164576
 BoxCollider:
@@ -5067,7 +5067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -5172,7 +5172,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1063058548
 BoxCollider:
@@ -5278,7 +5278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -5488,7 +5488,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1079987748
 BoxCollider:
@@ -5594,7 +5594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -5780,7 +5780,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1177852022
 BoxCollider:
@@ -5886,7 +5886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -5913,7 +5913,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1199875102
 BoxCollider:
@@ -6019,7 +6019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -6046,7 +6046,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1266074103
 BoxCollider:
@@ -6152,7 +6152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -6236,7 +6236,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1359431047
 BoxCollider:
@@ -6342,7 +6342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -6369,7 +6369,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1380421188
 BoxCollider:
@@ -6475,7 +6475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -6603,7 +6603,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1436722392
 BoxCollider:
@@ -6709,7 +6709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -6812,7 +6812,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1462112010
 BoxCollider:
@@ -6918,7 +6918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -7081,7 +7081,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1498379340
 BoxCollider:
@@ -7187,7 +7187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -7214,7 +7214,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1524050938
 BoxCollider:
@@ -7320,7 +7320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -7347,7 +7347,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1528178756
 BoxCollider:
@@ -7453,7 +7453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -7480,7 +7480,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1562151034
 BoxCollider:
@@ -7586,7 +7586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -7698,7 +7698,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1580071724
 BoxCollider:
@@ -7804,7 +7804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -7831,7 +7831,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1582235997
 BoxCollider:
@@ -7937,7 +7937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -7964,7 +7964,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1599194835
 BoxCollider:
@@ -8070,7 +8070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -8233,7 +8233,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1668772208
 BoxCollider:
@@ -8339,7 +8339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -8366,7 +8366,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1707281304
 BoxCollider:
@@ -8472,7 +8472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -8499,7 +8499,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1743947236
 BoxCollider:
@@ -8605,7 +8605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -8799,7 +8799,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1853266570
 BoxCollider:
@@ -8905,7 +8905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -8932,7 +8932,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1926938834
 BoxCollider:
@@ -9038,7 +9038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -9065,7 +9065,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1962579641
 BoxCollider:
@@ -9171,7 +9171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -9198,7 +9198,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1964179690
 BoxCollider:
@@ -9304,7 +9304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -9331,7 +9331,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &2044986333
 BoxCollider:
@@ -9437,7 +9437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -9464,7 +9464,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &2091289510
 BoxCollider:
@@ -9570,7 +9570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -9597,7 +9597,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &2092205087
 BoxCollider:
@@ -9703,7 +9703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -9832,7 +9832,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &2114538089
 BoxCollider:
@@ -9938,7 +9938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -9965,7 +9965,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &2132693172
 BoxCollider:
@@ -10071,7 +10071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c07c26cb103bb459827cf60460e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
-  colliderColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0.227, b: 0.9642949, a: 1}
   colliderType: 1
   calculateBoxSize: 1
   boxSize: {x: 1, y: 1, z: 1}
@@ -10088,6 +10088,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3939753697381857543, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466940578478132496, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33
@@ -10127,6 +10135,18 @@ PrefabInstance:
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656510710462102932, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342825516940322021, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342825516940322021, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8314225596402322282, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_Name
@@ -10264,7 +10284,7 @@ PrefabInstance:
       objectReference: {fileID: 686324814}
     - target: {fileID: 6044875700390002161, guid: e9b922d7ef83ef64db1a9403045cb7ab, type: 3}
       propertyPath: m_VersionIndex
-      value: 3797
+      value: 3803
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10455,7 +10475,7 @@ PrefabInstance:
       objectReference: {fileID: 575328058}
     - target: {fileID: 9192174045389400767, guid: 3d1e503c47a4b3f4098ca9e74e754ced, type: 3}
       propertyPath: m_VersionIndex
-      value: 3800
+      value: 3806
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10474,6 +10494,13 @@ SceneRoots:
   - {fileID: 1210207070588199154}
   - {fileID: 166639307}
   - {fileID: 6400695081367949145}
+  - {fileID: 623412523}
+  - {fileID: 341005695}
+  - {fileID: 1055052055}
+  - {fileID: 524833016}
+  - {fileID: 1351362758}
+  - {fileID: 249705777}
+  - {fileID: 333667365}
   - {fileID: 812394856}
   - {fileID: 2101359930}
   - {fileID: 311207479}
@@ -10490,10 +10517,3 @@ SceneRoots:
   - {fileID: 4775989570975644448}
   - {fileID: 6488188822180754191}
   - {fileID: 3084701885883231921}
-  - {fileID: 623412523}
-  - {fileID: 341005695}
-  - {fileID: 1055052055}
-  - {fileID: 524833016}
-  - {fileID: 1351362758}
-  - {fileID: 249705777}
-  - {fileID: 333667365}
