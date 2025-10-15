@@ -12,7 +12,7 @@
 
 # Build it yourself:
 1. Clone repo.
-2. Open with Unity 6000.2.0f1.
+2. Open with Unity 6000.2.8f1.
 3. File > Build Profiles > "Build" button
 
 # TODO:
