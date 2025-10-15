@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5271762349607073112}
   m_Layer: 7
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5612840423828577959}
   - component: {fileID: 2588665039262577475}
   - component: {fileID: 2359124542516403603}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AimPoint
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 404501212662192543}
   m_Layer: 7
   m_Name: Eyes
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,9 +301,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 684428831436695356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
   colliderColor: {r: 0, g: 0.5964391, b: 1, a: 1}
   colliderType: 2
+  calculateBoxSize: 1
   boxSize: {x: 1, y: 2, z: 1}
   sphereRadius: 0.1
   sphereSegments: 12
