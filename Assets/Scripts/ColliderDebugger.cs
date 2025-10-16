@@ -6,13 +6,16 @@ public class ColliderDebugger : MonoBehaviour
     public enum ColliderType { Sphere, Box, Capsule }
 
     [Header("Debug Settings")]
+    [Tooltip("Wireframe color")]
     [SerializeField] private Color colliderColor = Color.green;
+    [Tooltip("Wireframe shape")]
     [SerializeField] private ColliderType colliderType = ColliderType.Sphere;
     [Tooltip("Automatically calculate the box collider size based on the scale of the object. Leave OFF when you input your own Box Size.")]
-    [SerializeField] private bool calculateBoxSize = true;
+    [SerializeField] private bool calculateBoundaryBoxSize = true;
 
-    // Example sizes – replace with your collider’s values
+    // Default values
     [Header("Box")]
+    [Tooltip("Half sizes of the box (calculated at launch when specified)")]
     public Vector3 boxSize = new(1, 2, 1);
 
     [Header("Sphere")]
@@ -26,7 +29,7 @@ public class ColliderDebugger : MonoBehaviour
 
     private void Awake()
     {
-        if(calculateBoxSize)
+        if(calculateBoundaryBoxSize)
         {
             boxSize = transform.localScale * 0.498f;
         }
