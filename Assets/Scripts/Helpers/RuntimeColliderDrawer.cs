@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 /// <summary>
 /// Utility for drawing wire‑frame colliders at runtime.

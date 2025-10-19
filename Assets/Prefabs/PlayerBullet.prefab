@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
   colliderColor: {r: 0, g: 1, b: 0, a: 1}
   colliderType: 1
-  calculateBoxSize: 0
+  calculateBoundaryBoxSize: 0
   boxSize: {x: 0.082, y: 0.082, z: 0.36}
   sphereRadius: 0.5
   sphereSegments: 12
