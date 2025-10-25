@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a81aad0f40cfc740adb978a44b74814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transition: {fileID: 2687914429575551403}
+  _transitionAnimator: {fileID: 2687914429575551403}
   _transitionTime: 1
+  currentSceneName: 
   _isMainMenu: 0
 --- !u!1 &5405408521670469524
 GameObject:
