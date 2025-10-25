@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private GameObject gameOverPanel;
-
     [SerializeField] private int targetFPS = 240;
+
+    [Header("References")]
+    public GameObject gameOverPanel;
+
+    private static StageManager instance;
+    public static StageManager Instance => instance;
 
     private void Awake()
     {
@@ -15,6 +18,16 @@ public class StageManager : MonoBehaviour
         EventManager.OnPlayerDeath += OnGameOver;
 
         GameData.Instance.ResetLevelData();
+
+        // Singleton pattern — only one GameManager should exist
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnDestroy()
@@ -26,12 +39,6 @@ public class StageManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
-    }
-
-    public void RestartScene()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(0);
     }
 
     public void QuitGame()
