@@ -6,9 +6,13 @@ public class Health : MonoBehaviour
     [Header("References")]
     [SerializeField] private EffectHandler effectHandler;
 
+    [SerializeField] private int maxHealth = 10;
+    public int MaxHealth => maxHealth;
+
+    [SerializeField] private int currentHealth;
+    public int CurrentHealth => currentHealth;
+
     [SerializeField] private bool isEnemyObject = false;
-    [SerializeField] private int maxHealth = 5;
-    public int CurrentHealth;
 
     [Header("Debug")]
     [SerializeField] private bool godMode = false;
@@ -18,7 +22,7 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-        CurrentHealth = maxHealth;
+        currentHealth = maxHealth;
 
         effectHandler = GetComponent<EffectHandler>();
     }
@@ -31,7 +35,7 @@ public class Health : MonoBehaviour
             return;
         }
 
-        CurrentHealth -= amount;
+        currentHealth -= amount;
         if (CurrentHealth <= 0)
         {
             Die();
