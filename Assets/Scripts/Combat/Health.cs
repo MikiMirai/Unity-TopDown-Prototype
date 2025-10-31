@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     public int CurrentHealth;
 
+    [Header("Debug")]
+    [SerializeField] private bool godMode = false;
+
     // Events
     public event Action OnHit;
 
@@ -22,6 +25,12 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if (godMode)
+        {
+            //DEBUG: skip the damage calculation for the player, only for testing
+            return;
+        }
+
         CurrentHealth -= amount;
         if (CurrentHealth <= 0)
         {
