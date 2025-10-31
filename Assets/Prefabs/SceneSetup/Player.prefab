@@ -584,7 +584,7 @@ MonoBehaviour:
   groundedGravity: -2
   downwardVelocity: {x: 0, y: 0, z: 0}
   rotateSpeedDegPerSec: 720
-  projectilePrefab: {fileID: 9023230804282719145, guid: 3d1e503c47a4b3f4098ca9e74e754ced, type: 3}
+  projectilePrefab: {fileID: 7739546170733089067, guid: cd5c739c3a425f1408aa6c553962dd81, type: 3}
   firePoint: {fileID: 684428831436695356}
   projectileSpeed: 20
   debugAimTarget: {fileID: 5612840423828577959}
@@ -604,6 +604,7 @@ MonoBehaviour:
   isEnemyObject: 0
   maxHealth: 5
   CurrentHealth: 0
+  godMode: 0
 --- !u!114 &7977835249857860104
 MonoBehaviour:
   m_ObjectHideFlags: 0

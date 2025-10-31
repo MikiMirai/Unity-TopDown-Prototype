@@ -113,6 +113,7 @@ MonoBehaviour:
   isEnemyObject: 1
   maxHealth: 5
   CurrentHealth: 0
+  godMode: 0
 --- !u!114 &5488512371818900728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,10 +152,10 @@ MonoBehaviour:
   health: 10
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 0.5
+  timeBetweenAttacks: 1
   attackUpperForce: 4
-  attackForwardForce: 28
-  projectile: {fileID: 5256839968338438675, guid: e9b922d7ef83ef64db1a9403045cb7ab, type: 3}
+  attackForwardForce: 12
+  projectile: {fileID: 7739546170733089067, guid: b08115a2b5e57924e971b8012f02a726, type: 3}
   attackPosition: {fileID: 5744214849106600619}
   sightRange: 20
   attackRange: 12
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColliderDebugger
   colliderColor: {r: 0, g: 1, b: 0, a: 1}
   colliderType: 2
+  calculateBoundaryBoxSize: 1
   boxSize: {x: 1, y: 2, z: 1}
   sphereRadius: 0.1
   sphereSegments: 12
