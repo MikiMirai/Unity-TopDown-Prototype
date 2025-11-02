@@ -16,8 +16,11 @@
 3. File > Build Profiles > "Build" button
 
 # TODO:
-- [ ] Main & Pause Menu
-- [ ] Options Screen
-- [ ] Death Screen
-- [ ] Music & Sound Effects
+- [x] Main Menu
+- [ ] Pause Menu
+- [ ] Options Menu
+- [x] Death Screen
+- [ ] Win Screen or multiple waves/levels
+- [ ] Sound Effects (& maybe Music)
+- [x] Level Loader (with transition)
 - [ ] Credits Screen
