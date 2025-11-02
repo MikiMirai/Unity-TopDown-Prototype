@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int currentHealth;
     public int CurrentHealth => currentHealth;
 
-    [SerializeField] private bool isEnemyObject = false;
+    [SerializeField] private bool isEnemyObject = true;
 
     [Header("Debug")]
     [SerializeField] private bool godMode = false;
