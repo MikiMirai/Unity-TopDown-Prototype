@@ -30,6 +30,8 @@ public class LevelLoader : MonoBehaviour
             _transitionAnimator.SetBool("MainMenu", false);
         }
 
+        Debug.Log("Trying to load Next level!");
+
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
@@ -38,11 +40,15 @@ public class LevelLoader : MonoBehaviour
     /// </summary>
     public void LoadPreviousLevel()
     {
+        Debug.Log("Trying to load Previous level!");
+
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
     }
 
     public void LoadMenuLevel()
     {
+        Debug.Log("Trying to load Main Menu!");
+
         StartCoroutine(LoadLevel(0));
     }
 
