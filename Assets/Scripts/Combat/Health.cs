@@ -82,6 +82,18 @@ public class Health : MonoBehaviour
         if (healthSlider != null)
         {
             healthSlider.value = currentHealth;
+
+            if (currentHealth <= 0)
+            {
+                // Hide fill completely when health is 0
+                if (healthSlider.fillRect.TryGetComponent<Image>(out Image fillImage))
+                {
+                    if (fillImage != null)
+                    {
+                        fillImage.enabled = currentHealth > 0;
+                    }
+                }
+            }
         }
     }
 
