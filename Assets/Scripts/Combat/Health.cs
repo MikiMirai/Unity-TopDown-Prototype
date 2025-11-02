@@ -1,20 +1,24 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private EffectHandler effectHandler;
 
+    [Header("UI")]
+    [Tooltip("Only add this if you have a custom slider!")]
+    [SerializeField] private Slider healthSlider;
+
+    [Header("Settings")]
     [SerializeField] private int maxHealth = 10;
     public int MaxHealth => maxHealth;
-
-    [SerializeField] private int currentHealth;
-    public int CurrentHealth => currentHealth;
-
     [SerializeField] private bool isEnemyObject = true;
 
     [Header("Debug")]
+    [SerializeField] private int currentHealth;
+    public int CurrentHealth => currentHealth;
     [SerializeField] private bool godMode = false;
 
     // Events
@@ -23,6 +27,7 @@ public class Health : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
+        UpdateHealthBar();
 
         effectHandler = GetComponent<EffectHandler>();
     }
@@ -36,6 +41,9 @@ public class Health : MonoBehaviour
         }
 
         currentHealth -= amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        UpdateHealthBar();
+
         if (CurrentHealth <= 0)
         {
             Die();
@@ -44,6 +52,13 @@ public class Health : MonoBehaviour
         {
             OnHit?.Invoke();
         }
+    }
+
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        UpdateHealthBar();
     }
 
     private void Die()
@@ -60,6 +75,14 @@ public class Health : MonoBehaviour
         }
 
         // TODO: Add death logic here (animation, respawn, etc.)
+    }
+
+    void UpdateHealthBar()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth;
+        }
     }
 
     public void SubscribeToHitEvent(EffectHandler handler)
