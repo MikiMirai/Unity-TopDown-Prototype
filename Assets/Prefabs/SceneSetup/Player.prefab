@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590fe73eecbf4844496578fce52f8e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownController
-  moveSpeed: 10
+  moveSpeed: 8
   acceleration: 40
   deceleration: 30
   useSmoothDamp: 0
@@ -601,9 +601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   effectHandler: {fileID: 7977835249857860104}
-  isEnemyObject: 0
   maxHealth: 5
-  CurrentHealth: 0
+  currentHealth: 0
+  isEnemyObject: 0
   godMode: 0
 --- !u!114 &7977835249857860104
 MonoBehaviour:
