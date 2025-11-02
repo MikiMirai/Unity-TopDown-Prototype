@@ -306,7 +306,7 @@ MonoBehaviour:
   effectHandler: {fileID: 0}
   maxHealth: 10
   currentHealth: 0
-  isEnemyObject: 0
+  isEnemyObject: 1
   godMode: 0
 --- !u!1001 &6825505331212323461
 PrefabInstance:
