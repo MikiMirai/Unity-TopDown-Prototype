@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class TopDownController : MonoBehaviour
 {
+    // ---- MOVEMENT ----
     [Header("Movement")]
     public float moveSpeed = 10f;
     public float acceleration = 20f;   // Ramp-up speed for MoveTowards
@@ -12,6 +13,20 @@ public class TopDownController : MonoBehaviour
     public bool useSmoothDamp = false; // Toggle in Inspector
     public float smoothTime = 0.15f;   // Responsiveness for SmoothDamp
 
+    // ---- DASH ----
+    [Header("Dash")]
+    [Tooltip("Speed during dash")]
+    [SerializeField] private float dashSpeed = 20f;
+    [Tooltip("How long the dash lasts (seconds)")]
+    [SerializeField] private float dashDuration = 0.25f;
+    [Tooltip("Cooldown between dashes (seconds)")]
+    [SerializeField] private float dashCooldown = 0.8f;
+    [Tooltip("Consume stamina/mana? (hook for later)")]
+    [SerializeField] private bool dashCostsResource = false;
+    [Tooltip("Amount of resource used per dash")]
+    [SerializeField] private float dashCost = 25f;
+
+    // ---- GRAVITY ----
     [Header("Gravity")]
     public float gravity = -9.81f;
     public float groundedGravity = -2f; // Small downward force to keep controller grounded
@@ -32,11 +47,17 @@ public class TopDownController : MonoBehaviour
     [Header("Optional")]
     public Transform debugAimTarget; // Visual helper
 
-    private Vector2 moveInput;
-    private Vector2 lookStick;         // Gamepad look
-    private Vector3 moveVelocity;      // Current horizontal velocity
-    private Vector3 smoothDampVel;     // Ref velocity for SmoothDamp
+    // ---- INPUT ----
     private bool calculateControls = true;
+    private Vector2 moveInput;
+    private Vector2 lookStick;            // Gamepad look
+    private bool dashPressed;
+
+    private Vector3 moveVelocity;         // Current horizontal velocity
+    private Vector3 smoothDampVel;        // Ref velocity for SmoothDamp
+    private float dashTimer = 0f;         // counts down while dashing
+    private float dashCooldownTimer = 0f; // prevents spam
+    private Vector3 dashDirection;        // locked direction for the dash
 
     private void Awake()
     {
@@ -54,6 +75,7 @@ public class TopDownController : MonoBehaviour
         controls.Player.Look.canceled += ctx => lookStick = Vector2.zero;
 
         controls.Player.Attack.performed += ctx => Shoot();
+        controls.Player.Dash.performed += ctx => OnDash(ctx);
         controls.Player.DebugCollider.performed += ctx => TriggerDebugCollider();
     }
 
@@ -70,8 +92,16 @@ public class TopDownController : MonoBehaviour
         if (calculateControls)
         {
             HandleMovement();
+            HandleDashState();
             HandleAiming();
         }
+    }
+
+    public void OnDash(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("Dash performed!");
+
+        if (ctx.performed) dashPressed = true;
     }
 
     void OnGameOverEvent()
@@ -84,7 +114,47 @@ public class TopDownController : MonoBehaviour
         GameData.Instance.showDebugColliders = !GameData.Instance.showDebugColliders;
     }
 
-#region Movement
+    #region Dash
+    private void HandleDashState()
+    {
+        // ----- COOLDOWN -----
+        if (dashCooldownTimer > 0f)
+            dashCooldownTimer -= Time.deltaTime;
+
+        // ----- START DASH -----
+        if (dashPressed && dashTimer <= 0f && dashCooldownTimer <= 0f)
+        {
+            Vector3 camForward = cam.transform.forward;
+            camForward.y = 0;
+            camForward.Normalize();
+
+            Vector3 camRight = cam.transform.right;
+            camRight.y = 0;
+            camRight.Normalize();
+
+            Vector3 inputDir = camForward * moveInput.y + camRight * moveInput.x;
+
+            dashDirection = (inputDir.sqrMagnitude > 0.01f)
+                            ? inputDir.normalized
+                            : camForward;
+
+            dashTimer = dashDuration;      // <-- dash length
+            dashCooldownTimer = dashCooldown;      // <-- cooldown
+
+            if (dashCostsResource) { /* spend */ }
+            dashPressed = false;
+        }
+
+        // ----- END DASH -----
+        if (dashTimer > 0f)
+        {
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0f) dashTimer = 0f;
+        }
+    }
+    #endregion
+
+    #region Movement
     // -------- Movement --------
     private void HandleMovement()
     {
@@ -100,27 +170,35 @@ public class TopDownController : MonoBehaviour
         Vector3 inputDir = camForward * moveInput.y + camRight * moveInput.x;
         inputDir.Normalize();
 
-        // ---- Target velocity ----
-        Vector3 targetVelocity = inputDir * moveSpeed;
-
-        if (useSmoothDamp)
+        // ---- DASH OVERRIDES normal velocity while active ----
+        if (dashTimer > 0f)                     // <-- ONLY WHILE DASHING
         {
-            // SmoothDamp version (soft easing, floatier feel)
-            moveVelocity = Vector3.SmoothDamp(
-                moveVelocity, targetVelocity, ref smoothDampVel, smoothTime);
+            moveVelocity = dashDirection * dashSpeed;
         }
         else
         {
-            // MoveTowards version (more snappy & responsive)
-            if (inputDir.sqrMagnitude > 0.01f)
+            // ---- Target velocity ----
+            Vector3 targetVelocity = inputDir * moveSpeed;
+
+            if (useSmoothDamp)
             {
-                moveVelocity = Vector3.MoveTowards(
-                    moveVelocity, targetVelocity, acceleration * Time.deltaTime);
+                // SmoothDamp version (soft easing, floatier feel)
+                moveVelocity = Vector3.SmoothDamp(
+                    moveVelocity, targetVelocity, ref smoothDampVel, smoothTime);
             }
             else
             {
-                moveVelocity = Vector3.MoveTowards(
-                    moveVelocity, Vector3.zero, deceleration * Time.deltaTime);
+                // MoveTowards version (more snappy & responsive)
+                if (inputDir.sqrMagnitude > 0.01f)
+                {
+                    moveVelocity = Vector3.MoveTowards(
+                        moveVelocity, targetVelocity, acceleration * Time.deltaTime);
+                }
+                else
+                {
+                    moveVelocity = Vector3.MoveTowards(
+                        moveVelocity, Vector3.zero, deceleration * Time.deltaTime);
+                }
             }
         }
 

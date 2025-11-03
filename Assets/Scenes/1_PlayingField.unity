@@ -6966,6 +6966,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: dashCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: dashSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: dashCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.25
