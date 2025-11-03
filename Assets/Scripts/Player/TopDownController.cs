@@ -5,12 +5,12 @@ public class TopDownController : MonoBehaviour
 {
     // ---- MOVEMENT ----
     [Header("Movement")]
-    public float moveSpeed = 10f;
-    public float acceleration = 20f;   // Ramp-up speed for MoveTowards
-    public float deceleration = 10f;   // Ramp-down speed for MoveTowards
+    public float moveSpeed = 8f;
+    public float acceleration = 40f;   // Ramp-up speed for MoveTowards
+    public float deceleration = 30f;   // Ramp-down speed for MoveTowards
 
     [Header("SmoothDamp Settings")]
-    public bool useSmoothDamp = false; // Toggle in Inspector
+    public bool useSmoothDamp = false; // Soft easing method
     public float smoothTime = 0.15f;   // Responsiveness for SmoothDamp
 
     // ---- DASH ----
@@ -25,6 +25,8 @@ public class TopDownController : MonoBehaviour
     [SerializeField] private bool dashCostsResource = false;
     [Tooltip("Amount of resource used per dash")]
     [SerializeField] private float dashCost = 25f;
+    [Tooltip("Input buffer: Press in LAST X seconds of cooldown to auto-dash when ready (0 = no buffer)")]
+    [SerializeField] private float dashInputBufferWindow = 0.2f;
 
     // ---- GRAVITY ----
     [Header("Gravity")]
@@ -54,13 +56,13 @@ public class TopDownController : MonoBehaviour
     private bool calculateControls = true;
     private Vector2 moveInput;
     private Vector2 lookStick;            // Gamepad look
-    private bool dashPressed;
 
-    private Vector3 moveVelocity;         // Current horizontal velocity
-    private Vector3 smoothDampVel;        // Ref velocity for SmoothDamp
-    private float dashTimer = 0f;         // counts down while dashing
-    private float dashCooldownTimer = 0f; // prevents spam
-    private Vector3 dashDirection;        // locked direction for the dash
+    private Vector3 moveVelocity;         // Horizontal velocity
+    private Vector3 smoothDampVel;        // Horizontal velocity with SmoothDamp
+    private float dashTimer = 0f;         // Dash amount in time
+    private float dashCooldownTimer = 0f; // Dash Cooldown
+    private Vector3 dashDirection;        // Dash direction while control is locked
+    private bool bufferedDashPending;     // Dash button press buffering
 
     private void Awake()
     {
@@ -105,13 +107,6 @@ public class TopDownController : MonoBehaviour
         }
     }
 
-    public void OnDash(InputAction.CallbackContext ctx)
-    {
-        Debug.Log("Dash performed!");
-
-        if (ctx.performed) dashPressed = true;
-    }
-
     void OnGameOverEvent()
     {
         calculateControls = false;
@@ -123,41 +118,71 @@ public class TopDownController : MonoBehaviour
     }
 
     #region Dash
+    private void StartDash()
+    {
+        Vector3 camForward = cam.transform.forward;
+        camForward.y = 0;
+        camForward.Normalize();
+
+        Vector3 camRight = cam.transform.right;
+        camRight.y = 0;
+        camRight.Normalize();
+
+        Vector3 inputDir = camForward * moveInput.y + camRight * moveInput.x;
+
+        dashDirection = (inputDir.sqrMagnitude > 0.01f) ? inputDir.normalized : camForward;
+
+        dashTimer = dashDuration;
+        dashCooldownTimer = dashCooldown;
+
+        if (dashCostsResource)
+        {
+            // TODO: Spend mana/stamina
+        }
+    }
     private void HandleDashState()
     {
-        // ----- COOLDOWN -----
+        // ---- COOLDOWN ----
         if (dashCooldownTimer > 0f)
             dashCooldownTimer -= Time.deltaTime;
-
-        // ----- START DASH -----
-        if (dashPressed && dashTimer <= 0f && dashCooldownTimer <= 0f)
-        {
-            Vector3 camForward = cam.transform.forward;
-            camForward.y = 0;
-            camForward.Normalize();
-
-            Vector3 camRight = cam.transform.right;
-            camRight.y = 0;
-            camRight.Normalize();
-
-            Vector3 inputDir = camForward * moveInput.y + camRight * moveInput.x;
-
-            dashDirection = (inputDir.sqrMagnitude > 0.01f)
-                            ? inputDir.normalized
-                            : camForward;
-
-            dashTimer = dashDuration;      // <-- dash length
-            dashCooldownTimer = dashCooldown;      // <-- cooldown
-
-            if (dashCostsResource) { /* spend */ }
-            dashPressed = false;
-        }
 
         // ----- END DASH -----
         if (dashTimer > 0f)
         {
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0f) dashTimer = 0f;
+        }
+
+        // ---- START DASH ----
+        // Consume buffer if ready
+        if (bufferedDashPending && CanDash())
+        {
+            StartDash();
+            bufferedDashPending = false;
+        }
+    }
+
+    private bool CanDash()
+    {
+        return dashTimer <= 0f && dashCooldownTimer <= 0f;
+    }
+
+    public void OnDash(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("Dash performed!");
+
+        if (ctx.performed)
+        {
+            // IMMEDIATE DASH if possible
+            if (CanDash())
+            {
+                StartDash();
+            }
+            // BUFFER ONLY in last X seconds of COOLDOWN (NOT during active dash)
+            else if (dashTimer <= 0f && dashCooldownTimer > 0f && dashCooldownTimer <= dashInputBufferWindow)
+            {
+                bufferedDashPending = true;
+            }
         }
     }
     #endregion
@@ -179,7 +204,7 @@ public class TopDownController : MonoBehaviour
         inputDir.Normalize();
 
         // ---- DASH OVERRIDES normal velocity while active ----
-        if (dashTimer > 0f)                     // <-- ONLY WHILE DASHING
+        if (dashTimer > 0f)
         {
             moveVelocity = dashDirection * dashSpeed;
         }
