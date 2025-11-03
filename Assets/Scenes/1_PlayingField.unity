@@ -7072,6 +7072,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: dashUI
+      value: 
+      objectReference: {fileID: 942797195}
+    - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: dashCost
       value: 0
       objectReference: {fileID: 0}
@@ -11430,7 +11434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dash CD: 99'
+  m_text: Dash Ready
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11643,6 +11647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942797193}
   - component: {fileID: 942797194}
+  - component: {fileID: 942797195}
   m_Layer: 5
   m_Name: Dash_Slider
   m_TagString: Untagged
@@ -11724,6 +11729,25 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &942797195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942797192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e015c853f1518f4459f07cfb59fbe236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DashCooldownUI
+  slider: {fileID: 942797194}
+  cooldownText: {fileID: 919952427}
+  showCountdown: 1
+  timeFormat: 0.0
+  hideWhenReady: 0
+  readyColor: {r: 0, g: 1, b: 0, a: 1}
+  cooldownColor: {r: 1, g: 0.2356429, b: 0.21226418, a: 1}
 --- !u!1 &946328687
 GameObject:
   m_ObjectHideFlags: 0
