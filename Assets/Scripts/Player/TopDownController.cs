@@ -40,6 +40,9 @@ public class TopDownController : MonoBehaviour
     public Transform firePoint;
     public float projectileSpeed = 20f;
 
+    [Header("References")]
+    [SerializeField] private DashCooldownUI dashUI; // Cache reference
+
     private CharacterController controller;
     private Camera cam;
     private PlayerControls controls;
@@ -94,6 +97,11 @@ public class TopDownController : MonoBehaviour
             HandleMovement();
             HandleDashState();
             HandleAiming();
+        }
+
+        if (dashUI != null)
+        {
+            dashUI.UpdateDashCooldown(dashCooldownTimer, dashCooldown);
         }
     }
 
