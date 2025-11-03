@@ -8,8 +8,7 @@ public class StageManager : MonoBehaviour
     [Header("References")]
     public GameObject gameOverPanel;
 
-    private static StageManager instance;
-    public static StageManager Instance => instance;
+    public static StageManager Instance { get; private set; }
 
     private void Awake()
     {
@@ -20,13 +19,13 @@ public class StageManager : MonoBehaviour
         GameData.Instance.ResetLevelData();
 
         // Singleton pattern — only one GameManager should exist
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        instance = this;
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
