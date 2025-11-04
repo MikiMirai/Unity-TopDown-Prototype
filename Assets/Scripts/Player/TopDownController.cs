@@ -47,6 +47,7 @@ public class TopDownController : MonoBehaviour
 
     private CharacterController controller;
     private Camera cam;
+    private Animator animator;
     private PlayerControls controls;
 
     [Header("Optional")]
@@ -68,6 +69,7 @@ public class TopDownController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         cam = Camera.main;
+        animator = GetComponent<Animator>();
         controls = new PlayerControls();
 
         EventManager.OnPlayerDeath += OnGameOverEvent;
@@ -94,6 +96,11 @@ public class TopDownController : MonoBehaviour
 
     private void Update()
     {
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", controller.velocity.magnitude / moveSpeed);
+        }
+
         if (calculateControls)
         {
             HandleMovement();
