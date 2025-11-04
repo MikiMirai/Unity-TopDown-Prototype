@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1987891199678976434}
   - component: {fileID: 5393312942603569751}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_Projectile
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,10 +111,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   effectHandler: {fileID: 5488512371818900728}
+  healthSlider: {fileID: 0}
   maxHealth: 5
-  currentHealth: 0
   isEnemyObject: 1
+  currentHealth: 0
   godMode: 0
+  onEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5488512371818900728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +199,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
