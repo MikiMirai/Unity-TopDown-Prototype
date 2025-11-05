@@ -262,7 +262,7 @@ public class TopDownController : MonoBehaviour
     }
 #endregion
 
-#region Aiming
+    #region Aiming
     // -------- Aiming --------
     private void HandleAiming()
     {
@@ -303,7 +303,7 @@ public class TopDownController : MonoBehaviour
     }
 #endregion
 
-#region Shooting
+    #region Shooting
     // -------- Shooting --------
     private void Shoot()
     {
@@ -314,5 +314,5 @@ public class TopDownController : MonoBehaviour
         if (rb)
             rb.linearVelocity = firePoint.forward * projectileSpeed;
     }
-#endregion
+    #endregion
 }
