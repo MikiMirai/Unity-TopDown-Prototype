@@ -18,9 +18,10 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag(ownerTag)) return;
 
         // Apply damage if target has Health
-        if (other.TryGetComponent<Health>(out Health targetHealth))
+        if (other.TryGetComponent(out Health targetHealth))
         {
             targetHealth.TakeDamage(damage);
+            Debug.Log($"Taken damage from {other.name}");
         }
 
         Destroy(gameObject);
