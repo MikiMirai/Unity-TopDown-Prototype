@@ -1518,6 +1518,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137084949}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &140407297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 140407299}
+  - component: {fileID: 140407298}
+  m_Layer: 0
+  m_Name: GameData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &140407298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140407297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ecda7f462ad4c4c9628b9ccc70e383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameData
+  showDebugColliders: 0
+  currentLevel: 
+--- !u!4 &140407299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140407297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.61364, y: 10, z: -18.10437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &151915448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6868,10 +6914,6 @@ PrefabInstance:
     - target: {fileID: 8314225596402322282, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8642997846196315259, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
-      propertyPath: weaponMask.m_Bits
-      value: 513
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29400,20 +29442,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8d4ce432c3aa340bd85b2f8eecb74d, type: 3}
---- !u!114 &6115546664776543849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7079502493200436347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98ecda7f462ad4c4c9628b9ccc70e383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameData
-  showDebugColliders: 0
-  currentLevel: 
 --- !u!1 &7079502493200436347
 GameObject:
   m_ObjectHideFlags: 0
@@ -29424,7 +29452,6 @@ GameObject:
   m_Component:
   - component: {fileID: 522623581892943999}
   - component: {fileID: 8271669089861323807}
-  - component: {fileID: 6115546664776543849}
   - component: {fileID: 8271669089861323808}
   m_Layer: 0
   m_Name: GameManager
@@ -29459,7 +29486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a55ac2504dd5164fab589d7794e000b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  enemiesPerWave: 4
+  enemiesPerWave: 8
   spawnDelay: 0.25
   autoStartWave: 1
   spawnPoints:
@@ -29493,6 +29520,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 378591528}
   - {fileID: 522623581892943999}
+  - {fileID: 140407299}
   - {fileID: 1753614080}
   - {fileID: 1683752007}
   - {fileID: 1577881480}
