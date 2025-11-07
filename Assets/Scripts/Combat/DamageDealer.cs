@@ -7,7 +7,7 @@ public class DamageDealer : MonoBehaviour
     List<GameObject> hasDealthDamage;
 
     [SerializeField] private float weaponLength;
-    [SerializeField] private float weaponDamage;
+    [SerializeField] private int weaponDamage;
     [SerializeField] private LayerMask weaponMask;
 
     private void Start()
@@ -21,9 +21,10 @@ public class DamageDealer : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, weaponLength, weaponMask))
         {
-            if (!hasDealthDamage.Contains(hit.transform.gameObject))
+            if (hit.transform.TryGetComponent(out Health health) && !hasDealthDamage.Contains(hit.transform.gameObject))
             {
                 Debug.Log("Dealt Damage!");
+                health.TakeDamage(weaponDamage);
                 hasDealthDamage.Add(hit.transform.gameObject);
             }
         }
