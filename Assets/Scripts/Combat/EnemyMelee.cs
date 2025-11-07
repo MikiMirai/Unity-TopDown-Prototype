@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,19 +12,27 @@ public class EnemyMelee : MonoBehaviour
     [SerializeField] float attackCD = 3f;
     [SerializeField] float attackRange = 1.5f;
     [SerializeField] float aggroRange = 6f;
+    [SerializeField] float damageDuration = 0.5f;
 
     GameObject player;
     NavMeshAgent agent;
     Animator animator;
+    DamageDealer damageDealer;
 
     float timePassed;
     float newDestinationCD = 0.5f;
+    private Coroutine attackRoutine;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag(playerTag);
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        if (damageDealer == null)
+        {
+            damageDealer = GetComponentInChildren<DamageDealer>();
+        }
     }
 
     private void Update()
@@ -38,6 +47,7 @@ public class EnemyMelee : MonoBehaviour
             if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
             {
                 animator.SetTrigger("Attack");
+                attackRoutine = StartCoroutine(DealDamage());
                 timePassed = 0;
             }
         }
@@ -62,6 +72,15 @@ public class EnemyMelee : MonoBehaviour
     private void Die()
     {
         Destroy(this.gameObject);
+    }
+
+    IEnumerator DealDamage()
+    {
+        damageDealer.StartDealDamage();
+
+        yield return new WaitForSeconds(damageDuration);
+
+        damageDealer.EndDealDamage();
     }
 
     private void OnDrawGizmos()

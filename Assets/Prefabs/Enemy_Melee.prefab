@@ -270,8 +270,9 @@ MonoBehaviour:
   deathTime: 0
   playerTag: Player
   attackCD: 3
-  attackRange: 2
-  aggroRange: 6
+  attackRange: 2.2
+  aggroRange: 8
+  damageDuration: 0
 --- !u!136 &6337306454107994446
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -525,8 +526,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c15560b181c555c4c8721fddeaf104f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2461219955130450673}
   m_SourcePrefab: {fileID: 100100000, guid: c15560b181c555c4c8721fddeaf104f8, type: 3}
+--- !u!1 &8619873141925347589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c15560b181c555c4c8721fddeaf104f8, type: 3}
+  m_PrefabInstance: {fileID: 8889711086814182484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2461219955130450673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619873141925347589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7cdaf50da9a7043851f34a05e98fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
+  weaponLength: 1.3
+  weaponDamage: 1
+  weaponMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &8994849949297695679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c15560b181c555c4c8721fddeaf104f8, type: 3}
