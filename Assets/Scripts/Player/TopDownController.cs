@@ -67,6 +67,10 @@ public class TopDownController : MonoBehaviour
     private Vector3 dashDirection;        // Dash direction while control is locked
     private bool bufferedDashPending;     // Dash button press buffering
 
+    [Header("Deabug")]
+    [SerializeField] private bool isMouseMoving = true;
+    [SerializeField] private Vector2 lastMousePos;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -269,9 +273,24 @@ public class TopDownController : MonoBehaviour
     // -------- Aiming --------
     private void HandleAiming()
     {
-        // Fallback: gamepad stick
-        if (lookStick.sqrMagnitude > 0.01f)
+        // Always read mouse position
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+
+        // Determine if mouse is moving
+        if (screenPos == lastMousePos)
         {
+            isMouseMoving = false;
+        }
+        else isMouseMoving = true;
+
+        // Always set last position
+        lastMousePos = screenPos;
+
+        // Fallback: gamepad stick
+        if (lookStick.sqrMagnitude > 0.01f || !isMouseMoving)
+        {
+            isMouseMoving = false;
+
             Vector3 dir = new Vector3(lookStick.x, 0f, lookStick.y);
             AimTowards(transform.position + dir);
             return;
@@ -280,7 +299,6 @@ public class TopDownController : MonoBehaviour
         // Prefer mouse aiming if mouse exists
         if (Mouse.current != null && cam != null)
         {
-            Vector2 screenPos = Mouse.current.position.ReadValue();
             Ray ray = cam.ScreenPointToRay(screenPos);
 
             Plane plane = new Plane(Vector3.up, new Vector3(0f, transform.position.y, 0f));
