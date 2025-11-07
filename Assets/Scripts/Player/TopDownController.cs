@@ -269,6 +269,14 @@ public class TopDownController : MonoBehaviour
     // -------- Aiming --------
     private void HandleAiming()
     {
+        // Fallback: gamepad stick
+        if (lookStick.sqrMagnitude > 0.01f)
+        {
+            Vector3 dir = new Vector3(lookStick.x, 0f, lookStick.y);
+            AimTowards(transform.position + dir);
+            return;
+        }
+
         // Prefer mouse aiming if mouse exists
         if (Mouse.current != null && cam != null)
         {
@@ -282,13 +290,6 @@ public class TopDownController : MonoBehaviour
                 AimTowards(hitPoint);
                 return;
             }
-        }
-
-        // Fallback: gamepad stick
-        if (lookStick.sqrMagnitude > 0.01f)
-        {
-            Vector3 dir = new Vector3(lookStick.x, 0f, lookStick.y);
-            AimTowards(transform.position + dir);
         }
     }
 
