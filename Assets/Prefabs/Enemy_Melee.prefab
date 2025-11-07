@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 6337306454107994446}
   - component: {fileID: 1987891199678976434}
   - component: {fileID: 5393312942603569751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Melee
   m_TagString: Enemy
   m_Icon: {fileID: 0}

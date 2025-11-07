@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 8930281822414002243}
   - component: {fileID: 3706817207126608691}
   - component: {fileID: 3465236571645175628}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Destructable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,10 +304,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   effectHandler: {fileID: 0}
+  healthSlider: {fileID: 0}
   maxHealth: 10
-  currentHealth: 0
   isEnemyObject: 1
+  currentHealth: 0
   godMode: 0
+  onEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6825505331212323461
 PrefabInstance:
   m_ObjectHideFlags: 0

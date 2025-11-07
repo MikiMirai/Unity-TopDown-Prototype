@@ -6869,13 +6869,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8642997846196315259, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: weaponMask.m_Bits
+      value: 513
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8314225596402322282, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 776998922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
 --- !u!1 &568117690
 GameObject:
@@ -8981,28 +8982,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &776998915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8314225596402322282, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
-  m_PrefabInstance: {fileID: 564053649}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &776998922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776998915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae334cb7f2534941a35433f56d54ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackState
-  attackLayerIndex: 0
-  attackTag: Attack
-  attackSpamCooldown: 0.1
-  timePassed: 0
-  clipLength: 0
 --- !u!1 &781048454
 GameObject:
   m_ObjectHideFlags: 0
