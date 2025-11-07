@@ -37,13 +37,15 @@ public class TopDownController : MonoBehaviour
     [Header("Rotation")]
     public float rotateSpeedDegPerSec = 720f;
 
-    [Header("Shooting")]
+    [Header("Combat")]
+    public bool noLocomotionMelee = false;
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float projectileSpeed = 20f;
 
     [Header("References")]
     [SerializeField] private DashCooldownUI dashUI; // Cache reference
+    [SerializeField] private AttackState attackState;
 
     private CharacterController controller;
     private Camera cam;
@@ -71,6 +73,7 @@ public class TopDownController : MonoBehaviour
         cam = Camera.main;
         animator = GetComponent<Animator>();
         controls = new PlayerControls();
+        attackState = GetComponent<AttackState>();
 
         EventManager.OnPlayerDeath += OnGameOverEvent;
 
@@ -81,7 +84,7 @@ public class TopDownController : MonoBehaviour
         controls.Player.Look.performed += ctx => lookStick = ctx.ReadValue<Vector2>();
         controls.Player.Look.canceled += ctx => lookStick = Vector2.zero;
 
-        controls.Player.Attack.performed += ctx => Shoot();
+        controls.Player.Attack.performed += ctx => Attack();
         controls.Player.Dash.performed += ctx => OnDash(ctx);
         controls.Player.DebugCollider.performed += ctx => TriggerDebugCollider();
     }
@@ -314,5 +317,14 @@ public class TopDownController : MonoBehaviour
         if (rb)
             rb.linearVelocity = firePoint.forward * projectileSpeed;
     }
+    #endregion
+
+    #region Melee Attack
+    // -------- Attacking --------
+    private void Attack()
+    {
+        attackState.TryAttack();
+    }
+
     #endregion
 }
