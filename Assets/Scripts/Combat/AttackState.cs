@@ -5,6 +5,7 @@ public class AttackState : MonoBehaviour
 {
     private Animator animator;
     private Coroutine attackRoutine;
+    private DamageDealer playerDamageDealer;
 
     [Header("Settings")]
     [Tooltip("Layer index of your attack animations (usually 0 or 1)")]
@@ -22,6 +23,10 @@ public class AttackState : MonoBehaviour
         if (TryGetComponent(out Animator foundAnimator))
         {
             animator = foundAnimator;
+        }
+        if (playerDamageDealer == null)
+        {
+            playerDamageDealer = gameObject.GetComponentInChildren<DamageDealer>();
         }
     }
 
@@ -71,11 +76,14 @@ public class AttackState : MonoBehaviour
             yield break;
         }
 
+        playerDamageDealer.StartDealDamage();
+
         // Wait for THIS specific animation to finish
         float clipLength = stateInfo.length;
         yield return new WaitForSeconds(clipLength);
 
         attackRoutine = null;
+        playerDamageDealer.EndDealDamage();
         TryMove();
     }
 
