@@ -700,14 +700,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590fe73eecbf4844496578fce52f8e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownController
-  moveSpeed: 8
-  acceleration: 40
-  deceleration: 30
+  moveSpeed: 6
+  acceleration: 50
+  deceleration: 40
   useSmoothDamp: 0
   smoothTime: 0.15
-  dashSpeed: 16
-  dashDuration: 0.25
-  dashCooldown: 1
+  dashSpeed: 14
+  dashDuration: 0.2
+  dashCooldown: 0.8
   dashCostsResource: 0
   dashCost: 0
   dashInputBufferWindow: 0.2
@@ -768,6 +768,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2251467959685158353}
     m_Modifications:
+    - target: {fileID: 871527435664079037, guid: 1aed843d78e440a458b0ddf3635028f4, type: 3}
+      propertyPath: weaponMask.m_Bits
+      value: 513
+      objectReference: {fileID: 0}
     - target: {fileID: 8484126187472086486, guid: 1aed843d78e440a458b0ddf3635028f4, type: 3}
       propertyPath: m_Name
       value: Sword_001
