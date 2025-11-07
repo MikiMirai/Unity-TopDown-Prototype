@@ -10,16 +10,18 @@ public class EnemyMelee : MonoBehaviour
 
     [Header("Combat")]
     [SerializeField] float attackCD = 3f;
+    [SerializeField] float attackDelay = 0.5f;
     [SerializeField] float attackRange = 1.5f;
     [SerializeField] float aggroRange = 6f;
     [SerializeField] float damageDuration = 0.5f;
+    
 
     GameObject player;
     NavMeshAgent agent;
     Animator animator;
     DamageDealer damageDealer;
 
-    float timePassed;
+    [SerializeField] float timePassed;
     float newDestinationCD = 0.5f;
     private Coroutine attackRoutine;
 
@@ -46,7 +48,6 @@ public class EnemyMelee : MonoBehaviour
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
             {
-                animator.SetTrigger("Attack");
                 attackRoutine = StartCoroutine(DealDamage());
                 timePassed = 0;
             }
@@ -76,6 +77,10 @@ public class EnemyMelee : MonoBehaviour
 
     IEnumerator DealDamage()
     {
+        yield return new WaitForSeconds(attackDelay);
+
+        animator.SetTrigger("Attack");
+
         damageDealer.StartDealDamage();
 
         yield return new WaitForSeconds(damageDuration);
