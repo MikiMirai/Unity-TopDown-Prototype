@@ -87,6 +87,7 @@ public class AttackState : MonoBehaviour
         float clipLength = stateInfo.length;
         yield return new WaitForSeconds(clipLength);
 
+        isAttacking = false;
         attackRoutine = null;
         playerDamageDealer.EndDealDamage();
         TryMove();
