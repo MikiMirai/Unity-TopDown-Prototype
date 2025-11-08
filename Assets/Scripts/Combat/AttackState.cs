@@ -16,6 +16,7 @@ public class AttackState : MonoBehaviour
     [Header("Debug")]
     public float timePassed;
     public float clipLength;
+    public bool isAttacking = false;
     private float lastAttackTime = 0f;
 
     void Start()
@@ -32,6 +33,8 @@ public class AttackState : MonoBehaviour
 
     public void TryMove()
     {
+        isAttacking = false;
+
         animator.SetTrigger("Move");
         if (attackRoutine != null)
         {
@@ -44,6 +47,8 @@ public class AttackState : MonoBehaviour
     {
         // Tiny spam prevention
         if (Time.time - lastAttackTime < attackSpamCooldown) return;
+
+        isAttacking = true;
 
         lastAttackTime = Time.time;
 

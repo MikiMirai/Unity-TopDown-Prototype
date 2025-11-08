@@ -5,9 +5,9 @@ public class TopDownController : MonoBehaviour
 {
     // ---- MOVEMENT ----
     [Header("Movement")]
-    public float moveSpeed = 8f;
-    public float acceleration = 40f;   // Ramp-up speed for MoveTowards
-    public float deceleration = 30f;   // Ramp-down speed for MoveTowards
+    public float moveSpeed = 6f;
+    public float acceleration = 50f;   // Ramp-up speed for MoveTowards
+    public float deceleration = 40f;   // Ramp-down speed for MoveTowards
 
     [Header("SmoothDamp Settings")]
     public bool useSmoothDamp = false; // Soft easing method
@@ -16,9 +16,9 @@ public class TopDownController : MonoBehaviour
     // ---- DASH ----
     [Header("Dash")]
     [Tooltip("Speed during dash")]
-    [SerializeField] private float dashSpeed = 20f;
+    [SerializeField] private float dashSpeed = 14f;
     [Tooltip("How long the dash lasts (seconds)")]
-    [SerializeField] private float dashDuration = 0.25f;
+    [SerializeField] private float dashDuration = 0.2f;
     [Tooltip("Cooldown between dashes (seconds)")]
     [SerializeField] private float dashCooldown = 0.8f;
     [Tooltip("Consume stamina/mana? (hook for later)")]
@@ -108,10 +108,14 @@ public class TopDownController : MonoBehaviour
             animator.SetFloat("Speed", controller.velocity.magnitude / moveSpeed);
         }
 
-        if (calculateControls)
+        if (CanMove())
         {
             HandleMovement();
             HandleDashState();
+        }
+
+        if (calculateControls)
+        {
             HandleAiming();
         }
 
@@ -119,6 +123,25 @@ public class TopDownController : MonoBehaviour
         {
             dashUI.UpdateDashCooldown(dashCooldownTimer, dashCooldown);
         }
+    }
+
+    bool CanMove()
+    {
+        if (noLocomotionMelee)
+        {
+            if (calculateControls && !attackState.isAttacking)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        else if (calculateControls)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     void OnGameOverEvent()

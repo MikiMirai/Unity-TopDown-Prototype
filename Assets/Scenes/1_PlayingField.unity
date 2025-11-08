@@ -7131,6 +7131,10 @@ PrefabInstance:
       propertyPath: dashUI
       value: 
       objectReference: {fileID: 942797195}
+    - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: noLocomotionMelee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.25
