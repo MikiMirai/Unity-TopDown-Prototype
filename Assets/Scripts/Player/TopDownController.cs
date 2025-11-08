@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class TopDownController : MonoBehaviour
 {
-    // ---- MOVEMENT ----
     [Header("Movement")]
     public float moveSpeed = 6f;
     public float acceleration = 50f;   // Ramp-up speed for MoveTowards
@@ -13,7 +12,6 @@ public class TopDownController : MonoBehaviour
     public bool useSmoothDamp = false; // Soft easing method
     public float smoothTime = 0.15f;   // Responsiveness for SmoothDamp
 
-    // ---- DASH ----
     [Header("Dash")]
     [Tooltip("Speed during dash")]
     [SerializeField] private float dashSpeed = 14f;
@@ -28,17 +26,24 @@ public class TopDownController : MonoBehaviour
     [Tooltip("Input buffer: Press in LAST X seconds of cooldown to auto-dash when ready (0 = no buffer)")]
     [SerializeField] private float dashInputBufferWindow = 0.2f;
 
-    // ---- GRAVITY ----
     [Header("Gravity")]
     public float gravity = -9.81f;
-    public float groundedGravity = -2f; // Small downward force to keep controller grounded
+    [SerializeField] private float groundedGravity = -2f; // Small downward force to keep controller grounded
     [SerializeField] private Vector3 downwardVelocity;
 
     [Header("Rotation")]
     public float rotateSpeedDegPerSec = 720f;
 
     [Header("Combat")]
-    public bool noLocomotionMelee = false;
+    [SerializeField] private bool noLocomotionMelee = false;
+    [Tooltip("How far the player lunges forward (world units)")]
+    [SerializeField] private float lungeDistance = 0.35f;
+    [Tooltip("How long the lunge takes (seconds)")]
+    [SerializeField] private float lungeDuration = 0.12f;
+    [Tooltip("Curve for easing (optional)")]
+    [SerializeField] private AnimationCurve lungeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+    [Header("Shooting (Projectiles)")]
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float projectileSpeed = 20f;
@@ -47,29 +52,31 @@ public class TopDownController : MonoBehaviour
     [SerializeField] private DashCooldownUI dashUI; // Cache reference
     [SerializeField] private AttackState attackState;
 
+    [Header("Optional")]
+    public Transform debugAimTarget; // Visual helper
+
+    [Header("Deabug")]
+    [SerializeField] private bool isMouseMoving = true;
+    [SerializeField] private Vector2 lastMousePos;
+
+    // ---- PRIVATE REFS ----
     private CharacterController controller;
     private Camera cam;
     private Animator animator;
     private PlayerControls controls;
-
-    [Header("Optional")]
-    public Transform debugAimTarget; // Visual helper
 
     // ---- INPUT ----
     private bool calculateControls = true;
     private Vector2 moveInput;
     private Vector2 lookStick;            // Gamepad look
 
+    // ---- PRIVATE VARS ----
     private Vector3 moveVelocity;         // Horizontal velocity
     private Vector3 smoothDampVel;        // Horizontal velocity with SmoothDamp
     private float dashTimer = 0f;         // Dash amount in time
     private float dashCooldownTimer = 0f; // Dash Cooldown
     private Vector3 dashDirection;        // Dash direction while control is locked
     private bool bufferedDashPending;     // Dash button press buffering
-
-    [Header("Deabug")]
-    [SerializeField] private bool isMouseMoving = true;
-    [SerializeField] private Vector2 lastMousePos;
 
     private void Awake()
     {
