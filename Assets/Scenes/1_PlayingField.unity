@@ -7133,7 +7133,7 @@ PrefabInstance:
       objectReference: {fileID: 942797195}
     - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: noLocomotionMelee
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6099413615400031947, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15154,6 +15154,10 @@ PrefabInstance:
     - target: {fileID: 8782631113630077693, guid: 92f3e001208fc4545bc13a7c717aec51, type: 3}
       propertyPath: attackRange
       value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165477768436490904, guid: 92f3e001208fc4545bc13a7c717aec51, type: 3}
+      propertyPath: allowNormalDeath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

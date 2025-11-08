@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -60,7 +61,7 @@ public class TopDownController : MonoBehaviour
     [SerializeField] private Vector2 lastMousePos;
 
     // ---- PRIVATE REFS ----
-    private CharacterController controller;
+    private CharacterController characterController;
     private Camera cam;
     private Animator animator;
     private PlayerControls controls;
@@ -77,10 +78,11 @@ public class TopDownController : MonoBehaviour
     private float dashCooldownTimer = 0f; // Dash Cooldown
     private Vector3 dashDirection;        // Dash direction while control is locked
     private bool bufferedDashPending;     // Dash button press buffering
+    private Coroutine lungeRoutine;
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
         cam = Camera.main;
         animator = GetComponent<Animator>();
         controls = new PlayerControls();
@@ -112,7 +114,7 @@ public class TopDownController : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.SetFloat("Speed", controller.velocity.magnitude / moveSpeed);
+            animator.SetFloat("Speed", characterController.velocity.magnitude / moveSpeed);
         }
 
         if (CanMove())
@@ -280,7 +282,7 @@ public class TopDownController : MonoBehaviour
         }
 
         // ---- Gravity ----
-        if (controller.isGrounded)
+        if (characterController.isGrounded)
         {
             // Reset Y downwardVelocity when grounded
             downwardVelocity.y = groundedGravity;
@@ -295,7 +297,7 @@ public class TopDownController : MonoBehaviour
 
         // ---- Apply Movement ----
         Vector3 finalMove = moveVelocity + new Vector3(0, downwardVelocity.y, 0);
-        controller.Move(finalMove * Time.deltaTime);
+        characterController.Move(finalMove * Time.deltaTime);
     }
 #endregion
 
@@ -373,7 +375,47 @@ public class TopDownController : MonoBehaviour
     private void Attack()
     {
         attackState.TryAttack();
+
+        if (noLocomotionMelee)
+        {
+            StartMeleeAttack();
+        }
     }
 
+    public void StartMeleeAttack()
+    {
+        // Stop any previous lunge (in case of rapid attacks)
+        if (lungeRoutine != null) StopCoroutine(lungeRoutine);
+        lungeRoutine = StartCoroutine(LungeCoroutine());
+    }
+
+    private IEnumerator LungeCoroutine()
+    {
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = startPos + transform.forward * lungeDistance;
+
+        float elapsed = 0f;
+        while (elapsed < lungeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / lungeDuration);
+            t = lungeCurve.Evaluate(t); // smooth easing
+
+            Vector3 desiredPos = Vector3.Lerp(startPos, targetPos, t);
+            Vector3 delta = desiredPos - transform.position;
+
+            // Let CharacterController handle collisions / slopes
+            characterController.Move(delta);
+
+            yield return null;
+        }
+
+        // Make sure player ends exactly at the target
+        Vector3 finalDelta = targetPos - transform.position;
+        if (finalDelta.sqrMagnitude > 0.0001f)
+            characterController.Move(finalDelta);
+
+        lungeRoutine = null;
+    }
     #endregion
 }
