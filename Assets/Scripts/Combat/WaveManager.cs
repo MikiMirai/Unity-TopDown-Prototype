@@ -22,6 +22,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enemiesLeftText;
     [SerializeField] private string uiFormat = "Enemies Left: {0}";
 
+    [Header("Exit Trigger")]
+    [SerializeField] private string exitTriggerTag = "ExitTrigger";
+    [SerializeField] private GameObject exitTrigger;
+
     [Header("Events")]
     [SerializeField] private UnityEvent onWaveCleared;
 
@@ -35,6 +39,11 @@ public class WaveManager : MonoBehaviour
         if (spawnPoints == null || spawnPoints.Length == 0)
             Debug.LogError("WaveManager: Assign at least one spawn point!", this);
 
+        if (exitTrigger == null)
+        {
+            exitTrigger = GameObject.FindGameObjectWithTag(exitTriggerTag);
+        }
+
         InitializePool();
         UpdateUI();
     }
@@ -42,6 +51,8 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         if (autoStartWave) StartWave();
+
+        exitTrigger.SetActive(false);
     }
 
     public void StartWave()
@@ -84,6 +95,11 @@ public class WaveManager : MonoBehaviour
         UpdateUI();
         onWaveCleared?.Invoke();
         Debug.Log("Wave Cleared!");
+
+        if (exitTrigger != null)
+        {
+            exitTrigger.SetActive(true);
+        }
     }
 
     void SpawnEnemy()
