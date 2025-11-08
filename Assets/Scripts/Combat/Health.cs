@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private int currentHealth;
     public int CurrentHealth => currentHealth;
+    [SerializeField] private bool allowNormalDeath = false;
     [SerializeField] private bool godMode = false;
 
     // Events
@@ -67,9 +68,13 @@ public class Health : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} died");
 
-        if(isEnemyObject)
+        if(isEnemyObject && !allowNormalDeath)
         {
             onEnemyDeath?.Invoke();
+        }
+        else if (isEnemyObject && allowNormalDeath)
+        {
+            Destroy(gameObject); // Allow default destroy of object if it's enemy 
         }
         else
         {
