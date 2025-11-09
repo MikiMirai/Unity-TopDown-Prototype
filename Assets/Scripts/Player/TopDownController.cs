@@ -170,11 +170,7 @@ public class TopDownController : MonoBehaviour
         camForward.y = 0;
         camForward.Normalize();
 
-        Vector3 camRight = cam.transform.right;
-        camRight.y = 0;
-        camRight.Normalize();
-
-        Vector3 inputDir = camForward * moveInput.y + camRight * moveInput.x;
+        Vector3 inputDir = CameraRelative(moveInput, cam);
 
         dashDirection = (inputDir.sqrMagnitude > 0.01f) ? inputDir.normalized : camForward;
 
@@ -237,17 +233,7 @@ public class TopDownController : MonoBehaviour
     // -------- Movement --------
     private void HandleMovement()
     {
-        // ---- Camera-relative movement ----
-        Vector3 camForward = cam.transform.forward;
-        camForward.y = 0;
-        camForward.Normalize();
-
-        Vector3 camRight = cam.transform.right;
-        camRight.y = 0;
-        camRight.Normalize();
-
-        Vector3 inputDir = camForward * moveInput.y + camRight * moveInput.x;
-        inputDir.Normalize();
+        Vector3 inputDir = CameraRelative(moveInput, cam);
 
         // ---- DASH OVERRIDES normal velocity while active ----
         if (dashTimer > 0f)
@@ -416,6 +402,19 @@ public class TopDownController : MonoBehaviour
             characterController.Move(finalDelta);
 
         lungeRoutine = null;
+    }
+    #endregion
+
+    #region Helpers
+    private static Vector3 CameraRelative(Vector2 input, Camera cam)
+    {
+        var forward = cam.transform.forward;
+        forward.y = 0; forward.Normalize();
+
+        var right = cam.transform.right;
+        right.y = 0; right.Normalize();
+
+        return (forward * input.y + right * input.x).normalized;
     }
     #endregion
 }
