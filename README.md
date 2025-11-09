@@ -20,7 +20,9 @@
 - [ ] Pause Menu
 - [ ] Options Menu
 - [x] Death Screen
-- [ ] Win Screen or multiple waves/levels
+- [x] Win Screen
+- [ ] Multiple waves
+- [ ] More levels
 - [ ] Sound Effects (& maybe Music)
 - [x] Level Loader (with transition)
 - [ ] Credits Screen
