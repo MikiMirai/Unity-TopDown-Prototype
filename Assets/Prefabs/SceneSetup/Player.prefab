@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590fe73eecbf4844496578fce52f8e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownController
-  moveSpeed: 6
+  _moveSpeed: 6
   acceleration: 50
   deceleration: 40
   useSmoothDamp: 0
@@ -585,9 +585,11 @@ MonoBehaviour:
   downwardVelocity: {x: 0, y: 0, z: 0}
   rotateSpeedDegPerSec: 720
   noLocomotionMelee: 1
-  lungeDistance: 0.35
-  lungeDuration: 0.12
-  lungeCurve:
+  _attackMoveBlockDuration: 0.4
+  attackCooldown: 0.45
+  _lungeDistance: 0.5
+  _lungeDuration: 0.2
+  _lungeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -602,8 +604,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -611,6 +613,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  attackInputBufferWindow: 0.25
   projectilePrefab: {fileID: 7739546170733089067, guid: cd5c739c3a425f1408aa6c553962dd81, type: 3}
   firePoint: {fileID: 684428831436695356}
   projectileSpeed: 20
@@ -633,7 +636,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackState
   attackLayerIndex: 0
   attackTag: Attack
-  attackSpamCooldown: 0.1
   timePassed: 0
   clipLength: 0
   isAttacking: 0

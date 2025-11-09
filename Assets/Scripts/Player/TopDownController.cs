@@ -38,11 +38,17 @@ public class TopDownController : MonoBehaviour
     [Header("Combat")]
     [SerializeField] private bool noLocomotionMelee = false;
     [Tooltip("How far the player lunges forward (world units)")]
-    [SerializeField] private float lungeDistance = 0.35f;
+    [SerializeField] private float _attackMoveBlockDuration = 0.25f;   // seconds
+    [SerializeField] private float attackCooldown = 0.25f;
+    [SerializeField] private float _lungeDistance = 0.35f;
     [Tooltip("How long the lunge takes (seconds)")]
-    [SerializeField] private float lungeDuration = 0.12f;
+    [SerializeField] private float _lungeDuration = 0.12f;
     [Tooltip("Curve for easing (optional)")]
-    [SerializeField] private AnimationCurve lungeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [SerializeField] private AnimationCurve _lungeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+    [Header("Attack buffering")]
+    [SerializeField] private float attackInputBufferWindow = 0.15f;   // seconds
+    private bool bufferedAttackPending;
 
     [Header("Shooting (Projectiles)")]
     [SerializeField] private GameObject projectilePrefab;
@@ -74,11 +80,18 @@ public class TopDownController : MonoBehaviour
     // ---- PRIVATE VARS ----
     private Vector3 moveVelocity;         // Horizontal velocity
     private Vector3 smoothDampVel;        // Horizontal velocity with SmoothDamp
-    private float dashTimer = 0f;         // Dash amount in time
-    private float dashCooldownTimer = 0f; // Dash Cooldown
     private Vector3 dashDirection;        // Dash direction while control is locked
     private bool bufferedDashPending;     // Dash button press buffering
-    private Coroutine lungeRoutine;
+    private Coroutine _lungeRoutine;
+    private bool _isAttackInitiated = false;
+
+
+    // ---- TIMERS ----
+    private float dashTimer = 0f;         // Dash amount in time
+    private float dashCooldownTimer = 0f; // Dash Cooldown
+    private float _attackInitiatedTime = -Mathf.Infinity;   // Last time Attack() was called
+    private float _nextAttackTime;
+    private float moveBlockTimer = 0f;
 
     private void Awake()
     {
@@ -97,7 +110,7 @@ public class TopDownController : MonoBehaviour
         controls.Player.Look.performed += ctx => lookStick = ctx.ReadValue<Vector2>();
         controls.Player.Look.canceled += ctx => lookStick = Vector2.zero;
 
-        controls.Player.Attack.performed += ctx => Attack();
+        controls.Player.Attack.performed += HandleAttackInput;
         controls.Player.Dash.performed += ctx => OnDash(ctx);
         controls.Player.DebugCollider.performed += ctx => TriggerDebugCollider();
     }
@@ -117,6 +130,14 @@ public class TopDownController : MonoBehaviour
             animator.SetFloat("Speed", characterController.velocity.magnitude / _moveSpeed);
         }
 
+        if (attackState.isAttacking)
+        {
+            if (!InBlockWindow() && moveInput.sqrMagnitude > 0.01f)
+            {
+                CancelAttack();
+            }
+        }
+
         if (CanMove())
         {
             HandleMovement();
@@ -132,26 +153,18 @@ public class TopDownController : MonoBehaviour
         {
             dashUI.UpdateDashCooldown(dashCooldownTimer, dashCooldown);
         }
-    }
 
-    bool CanMove()
-    {
-        if (noLocomotionMelee)
+        if (bufferedAttackPending && Time.time >= _nextAttackTime)
         {
-            if (calculateControls && !attackState.isAttacking)
-            {
-                return true;
-            }
-
-            return false;
-        }
-        else if (calculateControls)
-        {
-            return true;
+            Attack();
+            bufferedAttackPending = false;
         }
 
-        return false;
+        if (moveBlockTimer > 0f)
+            moveBlockTimer -= Time.deltaTime;
     }
+
+    
 
     void OnGameOverEvent()
     {
@@ -285,7 +298,7 @@ public class TopDownController : MonoBehaviour
         Vector3 finalMove = moveVelocity + new Vector3(0, downwardVelocity.y, 0);
         characterController.Move(finalMove * Time.deltaTime);
     }
-#endregion
+    #endregion
 
     #region Aiming
     // -------- Aiming --------
@@ -341,7 +354,7 @@ public class TopDownController : MonoBehaviour
 
         if (debugAimTarget) debugAimTarget.position = worldPoint;
     }
-#endregion
+    #endregion
 
     #region Shooting
     // -------- Shooting --------
@@ -358,50 +371,93 @@ public class TopDownController : MonoBehaviour
 
     #region Melee Attack
     // -------- Attacking --------
+
+    private void HandleAttackInput(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.performed) return; // Ignore cancellations
+
+        bool readyNow = Time.time >= _nextAttackTime;
+
+        if (readyNow)
+        {
+            Attack(); // Set the new cooldown
+            return;
+        }
+
+        // Buffer only if we are in the last X seconds of cooldown
+        if (!bufferedAttackPending &&
+        _nextAttackTime > Time.time &&
+        Time.time >= _nextAttackTime - attackInputBufferWindow)
+        {
+            bufferedAttackPending = true;
+        }
+    }
+
     private void Attack()
     {
         attackState.TryAttack();
 
-        if (noLocomotionMelee)
-        {
-            StartMeleeAttack();
-        }
+        StartMeleeAttack();
+
+        moveBlockTimer = _attackMoveBlockDuration;
+
+        _nextAttackTime = Time.time + attackCooldown;
     }
 
-    public void StartMeleeAttack()
+    private void StartMeleeAttack()
     {
         // Stop any previous lunge (in case of rapid attacks)
-        if (lungeRoutine != null) StopCoroutine(lungeRoutine);
-        lungeRoutine = StartCoroutine(LungeCoroutine());
+        if (_lungeRoutine != null) StopCoroutine(_lungeRoutine);
+        _lungeRoutine = StartCoroutine(LungeCoroutine());
+    }
+
+    private void CancelAttack()
+    {
+        if (_lungeRoutine != null)
+        {
+            StopCoroutine(_lungeRoutine);
+            _lungeRoutine = null;
+        }
+
+        attackState.Cancel();
+        OnAttackFinished();
+
+        bufferedAttackPending = false;
+    }
+
+    private void OnAttackFinished()
+    {
+        _isAttackInitiated = false;
+
+        // Keep the flag alive until block time is over
+        if (moveBlockTimer <= 0f)
+            _isAttackInitiated = false;
     }
 
     private IEnumerator LungeCoroutine()
     {
         Vector3 startPos = transform.position;
-        Vector3 targetPos = startPos + transform.forward * lungeDistance;
+        Vector3 target = startPos + transform.forward * _lungeDistance;
 
         float elapsed = 0f;
-        while (elapsed < lungeDuration)
+        while (elapsed < _lungeDuration && !attackState.IsCancelled)
         {
             elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / lungeDuration);
-            t = lungeCurve.Evaluate(t); // smooth easing
+            float t = Mathf.Clamp01(elapsed / _lungeDuration);
+            t = _lungeCurve.Evaluate(t);
 
-            Vector3 desiredPos = Vector3.Lerp(startPos, targetPos, t);
-            Vector3 delta = desiredPos - transform.position;
-
-            // Let CharacterController handle collisions / slopes
-            characterController.Move(delta);
+            Vector3 desiredPos = Vector3.Lerp(startPos, target, t);
+            characterController.Move(desiredPos - transform.position);
 
             yield return null;
         }
 
-        // Make sure player ends exactly at the target
-        Vector3 finalDelta = targetPos - transform.position;
-        if (finalDelta.sqrMagnitude > 0.0001f)
-            characterController.Move(finalDelta);
+        // Snap to final position if we finished the curve
+        if (!attackState.IsCancelled)
+            characterController.Move(target - transform.position);
 
-        lungeRoutine = null;
+        _lungeRoutine = null; // Mark coroutine as finished
+        OnAttackFinished();
     }
     #endregion
 
@@ -415,6 +471,37 @@ public class TopDownController : MonoBehaviour
         right.y = 0; right.Normalize();
 
         return (forward * input.y + right * input.x).normalized;
+    }
+
+    private bool InBlockWindow()
+    {
+        // _isAttackInitiated becomes true when an attack starts.
+        // It is reset only after the attack finishes or gets cancelled.
+        return _isAttackInitiated &&
+               Time.time - _attackInitiatedTime < _attackMoveBlockDuration;
+    }
+
+    bool CanMove()
+    {
+        if (!calculateControls) return false;
+
+        // Block movement while the timer is running
+        if (moveBlockTimer > 0f)
+            return false;
+
+        if (noLocomotionMelee)
+        {
+            return calculateControls && !attackState.isAttacking;
+        }
+
+        return true; // Free to move
+    }
+
+    private bool CanAttack()
+    {
+        if (Time.time < _nextAttackTime) return false;
+        _nextAttackTime = Time.time + attackCooldown;
+        return true;
     }
     #endregion
 }
