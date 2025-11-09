@@ -11,12 +11,12 @@ public class AttackState : MonoBehaviour
     [Tooltip("Layer index of your attack animations (usually 0 or 1)")]
     [SerializeField] private int attackLayerIndex = 0;
     [SerializeField] private string attackTag = "Attack"; // Tag on both attack clips
-    [SerializeField] private float attackSpamCooldown = 0.1f; // Prevent button mashing
 
     [Header("Debug")]
     public float timePassed;
     public float clipLength;
     public bool isAttacking = false;
+    public bool IsCancelled { get; private set; } = false;
     private float lastAttackTime = 0f;
 
     void Start()
@@ -45,10 +45,12 @@ public class AttackState : MonoBehaviour
 
     public void TryAttack()
     {
-        // Tiny spam prevention
-        if (Time.time - lastAttackTime < attackSpamCooldown) return;
-
-        isAttacking = true;
+        if (!isAttacking)
+        {
+            isAttacking = true;
+            IsCancelled = false;
+            // trigger animation, etc.
+        }
 
         lastAttackTime = Time.time;
 
@@ -97,5 +99,11 @@ public class AttackState : MonoBehaviour
     public void OnAttackEnd()
     {
         attackRoutine = null;
+    }
+
+    public void Cancel()
+    {
+        IsCancelled = true;
+        isAttacking = false;
     }
 }
