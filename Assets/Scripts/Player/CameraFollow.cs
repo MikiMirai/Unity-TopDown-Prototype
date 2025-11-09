@@ -1,45 +1,23 @@
 using UnityEngine;
 
 [ExecuteAlways]
-[RequireComponent(typeof(Camera))]
 public class CameraFollow : MonoBehaviour
 {
     [Header("Target")]
     public Transform target;
+    public float smoothTime = 0.3f;
 
     [Header("Offsets (auto-calculated if you move camera in Scene view)")]
-    public Vector3 positionOffset = new Vector3(0, 10, -10);
-    public Vector3 rotationOffset = new Vector3(45, 0, 0);
+    public Vector3 positionOffset = new(0, 10, -10);
 
-    [Tooltip("If enabled, moving/rotating the camera in Scene View will update offsets.")]
-    public bool updateOffsetsInEditor = true;
+    private Vector3 velocity = Vector3.zero;
 
     private void LateUpdate()
     {
         if (!target) return;
 
-        // In play mode: follow strictly
-        if (Application.isPlaying)
-        {
-            transform.position = target.position + positionOffset;
-            transform.rotation = Quaternion.Euler(rotationOffset);
-        }
-#if UNITY_EDITOR
-        else if (updateOffsetsInEditor && target != null)
-        {
-            // In editor, if designer moves the camera, capture new offsets
-            positionOffset = transform.position - target.position;
-            rotationOffset = transform.rotation.eulerAngles;
-        }
-#endif
-    }
+        Vector3 targetPosition = target.position + positionOffset;
 
-    private void OnValidate()
-    {
-        if (target && Application.isPlaying)
-        {
-            transform.position = target.position + positionOffset;
-            transform.rotation = Quaternion.Euler(rotationOffset);
-        }
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 }
