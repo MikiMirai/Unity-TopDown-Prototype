@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 public class TopDownController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 6f;
-    public float acceleration = 50f;   // Ramp-up speed for MoveTowards
-    public float deceleration = 40f;   // Ramp-down speed for MoveTowards
+    [SerializeField] private float _moveSpeed = 6f;
+    [SerializeField] private float acceleration = 50f;   // Ramp-up speed for MoveTowards
+    [SerializeField] private float deceleration = 40f;   // Ramp-down speed for MoveTowards
 
     [Header("SmoothDamp Settings")]
-    public bool useSmoothDamp = false; // Soft easing method
-    public float smoothTime = 0.15f;   // Responsiveness for SmoothDamp
+    [SerializeField] private bool useSmoothDamp = false; // Soft easing method
+    [SerializeField] private float smoothTime = 0.15f;   // Responsiveness for SmoothDamp
 
     [Header("Dash")]
     [Tooltip("Speed during dash")]
@@ -28,12 +28,12 @@ public class TopDownController : MonoBehaviour
     [SerializeField] private float dashInputBufferWindow = 0.2f;
 
     [Header("Gravity")]
-    public float gravity = -9.81f;
+    [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float groundedGravity = -2f; // Small downward force to keep controller grounded
     [SerializeField] private Vector3 downwardVelocity;
 
     [Header("Rotation")]
-    public float rotateSpeedDegPerSec = 720f;
+    [SerializeField] private float rotateSpeedDegPerSec = 720f;
 
     [Header("Combat")]
     [SerializeField] private bool noLocomotionMelee = false;
@@ -45,16 +45,16 @@ public class TopDownController : MonoBehaviour
     [SerializeField] private AnimationCurve lungeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Shooting (Projectiles)")]
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-    public float projectileSpeed = 20f;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float projectileSpeed = 20f;
 
     [Header("References")]
     [SerializeField] private DashCooldownUI dashUI; // Cache reference
     [SerializeField] private AttackState attackState;
 
     [Header("Optional")]
-    public Transform debugAimTarget; // Visual helper
+    [SerializeField] private Transform debugAimTarget; // Visual helper
 
     [Header("Deabug")]
     [SerializeField] private bool isMouseMoving = true;
@@ -114,17 +114,17 @@ public class TopDownController : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.SetFloat("Speed", characterController.velocity.magnitude / moveSpeed);
+            animator.SetFloat("Speed", characterController.velocity.magnitude / _moveSpeed);
         }
 
         if (CanMove())
         {
             HandleMovement();
-            HandleDashState();
         }
 
         if (calculateControls)
         {
+            HandleDashState();
             HandleAiming();
         }
 
@@ -254,10 +254,10 @@ public class TopDownController : MonoBehaviour
         {
             moveVelocity = dashDirection * dashSpeed;
         }
-        else
+        else // Handle normal movement velocity
         {
             // ---- Target velocity ----
-            Vector3 targetVelocity = inputDir * moveSpeed;
+            Vector3 targetVelocity = inputDir * _moveSpeed;
 
             if (useSmoothDamp)
             {
