@@ -196,8 +196,7 @@ public class WaveManager : MonoBehaviour
             safePos = hit.position;
         }
 
-        enemy.transform.position = safePos;
-        enemy.transform.rotation = sp.rotation;
+        enemy.transform.SetPositionAndRotation(safePos, sp.rotation);
 
         // 3. Deactivate
         enemy.SetActive(false);

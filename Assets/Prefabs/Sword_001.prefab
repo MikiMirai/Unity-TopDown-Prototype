@@ -103,4 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
   weaponLength: 1.3
+  offset: {x: 0.33, y: 0.2, z: 0}
   weaponDamage: 1
+  weaponMask:
+    serializedVersion: 2
+    m_Bits: 0
