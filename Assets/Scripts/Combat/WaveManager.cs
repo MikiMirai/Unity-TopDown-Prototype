@@ -29,10 +29,18 @@ public class WaveManager : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent onWaveCleared;
 
+    // --- Lists ---
     private Queue<GameObject> enemyPool = new();
     private List<GameObject> activeEnemies = new();
+    // Maps a spawn point to the enemy currently spawned there
+    private readonly Dictionary<Transform, GameObject> _activeSpawnPoints = new();
+    // Queue for enemies that are waiting to be spawned when all points are busy.
+    private readonly Queue<int> _pendingSpawns = new();
+
+    // --- Private Fields ---
     private int enemiesToKill;
     private bool waveInProgress = false;
+    private bool _watcherRunning = false;
 
     private void Awake()
     {
@@ -63,7 +71,18 @@ public class WaveManager : MonoBehaviour
         enemiesToKill = enemiesPerWave;
         UpdateUI();
 
-        StartCoroutine(SpawnEnemies());
+        // 1. Spawn the initial enemies immediately
+        int initialSpawnCount = Mathf.Min(enemiesPerWave, spawnPoints.Length);
+        for (int i = 0; i < initialSpawnCount; i++)
+            SpawnEnemyAtFreePoint();
+
+        // 2. Queeue the rest that need to be spawned
+        for (int i = initialSpawnCount; i < enemiesPerWave; i++)
+            _pendingSpawns.Enqueue(i);   // we just need a placeholder
+
+        // 3. Start the corouting that watches the points
+        if (!_watcherRunning)
+            StartCoroutine(MonitorFreePoints());
     }
 
     IEnumerator SpawnEnemies()
@@ -77,16 +96,25 @@ public class WaveManager : MonoBehaviour
 
     void OnEnemyKilled(GameObject enemy)
     {
+        // Find which spawn point it was using
+        Transform usedSp = null;
+        foreach (var kvp in _activeSpawnPoints)
+            if (kvp.Value == enemy) { usedSp = kvp.Key; break; }
+
+        if (usedSp != null)
+            _activeSpawnPoints.Remove(usedSp);
+
         activeEnemies.Remove(enemy);
         enemiesToKill--;
         UpdateUI();
 
         ReturnToPool(enemy);
 
-        if (enemiesToKill <= 0 && waveInProgress)
-        {
-            WaveCleared();
-        }
+        // If we have queued spawns, try to spawn one now
+        if (_pendingSpawns.Count > 0)
+            SpawnEnemyAtFreePoint();   // this will also dequeue automatically
+
+        if (enemiesToKill <= 0 && waveInProgress) WaveCleared();
     }
 
     void WaveCleared()
@@ -123,31 +151,63 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    private void SpawnEnemyAtFreePoint()
+    {
+        // Consume one queued enemy (if any)
+        if (_pendingSpawns.Count > 0)
+            _pendingSpawns.Dequeue();
+
+        // Find a free spawn point
+        Transform freeSp = null;
+
+        foreach (var sp in spawnPoints)
+        {
+            if (!_activeSpawnPoints.ContainsKey(sp))
+            {
+                freeSp = sp;
+                break;
+            }
+        }
+
+        if (freeSp == null) return; // not a free point should be handled by the watcher
+
+        GameObject enemy = GetPooledEnemy();
+        if (!enemy) return;
+
+        // Position & activate
+        Vector3 safePos = freeSp.position;
+        if (NavMesh.SamplePosition(safePos, out NavMeshHit hit, 1.5f, NavMesh.AllAreas))
+            safePos = hit.position;
+        enemy.transform.SetPositionAndRotation(safePos, freeSp.rotation);
+        enemy.SetActive(true);
+
+        // Register death callback
+        if (enemy.TryGetComponent(out Health h))
+            h.onEnemyDeath.AddListener(() => OnEnemyKilled(enemy));
+
+        _activeSpawnPoints[freeSp] = enemy;
+    }
+
     void InitializePool()
     {
+        Vector3 dummyPos = new(0, -100f, 0); // Dummy position to initialize the whole pool
+
         int poolSize = enemiesPerWave * 3; // Always have buffer
         for (int i = 0; i < poolSize; i++)
         {
             // 1. Pick a random prefab
             GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
 
-            // 2. Pick a random spawn point
-            Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            // 2. Instantiate on the safe position
+            GameObject obj = Instantiate(prefab, dummyPos, Quaternion.identity, transform);
 
-            // 3. Snap to a NavMesh
-            Vector3 safePos = sp.position;
-            if (NavMesh.SamplePosition(safePos, out NavMeshHit hit, 1.5f, NavMesh.AllAreas))
-                safePos = hit.position;
-
-            // 4. Instantiate on the safe position
-            GameObject obj = Instantiate(prefab, safePos, sp.rotation, transform);
-
-            // Disable NavMesh Agent to avoid warnings
+            // 3. Disable NavMesh Agent to avoid warnings
             if (obj.TryGetComponent(out NavMeshAgent agent))
             {
                 agent.enabled = false;
             }
 
+            // 4. Set enemy object to false
             obj.SetActive(false);
             enemyPool.Enqueue(obj);
         }
@@ -210,4 +270,20 @@ public class WaveManager : MonoBehaviour
             enemiesLeftText.text = string.Format(uiFormat, enemiesToKill);
         }
     }
+
+    #region Helper Methods
+    private IEnumerator MonitorFreePoints()
+    {
+        _watcherRunning = true;
+        while (_pendingSpawns.Count > 0)
+        {
+            // Wait until at least one spawn point becomes free
+            yield return new WaitUntil(() => _activeSpawnPoints.Count < spawnPoints.Length);
+
+            // Spawn the next queued enemy
+            SpawnEnemyAtFreePoint();
+        }
+        _watcherRunning = false;
+    }
+    #endregion
 }
