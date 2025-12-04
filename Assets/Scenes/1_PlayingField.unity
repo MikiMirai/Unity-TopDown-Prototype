@@ -7312,11 +7312,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8642997846196315259, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: comboSystem
+      value: 
+      objectReference: {fileID: 564053651}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2954707677687113968, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 564053651}
   m_SourcePrefab: {fileID: 100100000, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+--- !u!1 &564053650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2954707677687113968, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+  m_PrefabInstance: {fileID: 564053649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &564053651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564053650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be87635c0abe77f4faaabdcbd8e92059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComboSystem
+  comboTimeout: 2
+  rankThresholds: 01000000030000000500000008000000
+  rankMultipliers:
+  - 1
+  - 1.5
+  - 2
+  - 2.5
+  - 3.5
+  comboText: {fileID: 1266524286}
+  comboDisplayFormat: 'Combo: {0} [{1}]'
+  OnComboChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &568117690
 GameObject:
   m_ObjectHideFlags: 0
@@ -16303,6 +16340,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 975813872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1266524286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6895149167692245553, guid: 6bba3231c928df44ab8f0cc402009cd3, type: 3}
+  m_PrefabInstance: {fileID: 1753614080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1275174869
 GameObject:
   m_ObjectHideFlags: 0

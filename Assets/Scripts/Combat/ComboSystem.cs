@@ -15,6 +15,8 @@ public class ComboSystem : MonoBehaviour
     [Header("Combo Settings")]
     [Tooltip("Time window in seconds to continue the combo after the last light attack.")]
     public float comboTimeout = 2f;
+    [Tooltip("Maximum number of light attacks that will be counted while you’re on rank S.")]
+    public int maxComboCount = 120;
 
     // Thresholds for each rank (inclusive), e.g. { 1,3,5,8 } means:
     [Tooltip("Hit count thresholds for each rank (D,C,B,A,S).")]
@@ -53,7 +55,8 @@ public class ComboSystem : MonoBehaviour
     /// </summary>
     public void RegisterLightAttack()
     {
-        currentComboCount++;
+        if (currentComboCount < maxComboCount)
+            currentComboCount++;
 
         // Restart the timeout coroutine
         if (timeoutCoroutine != null) StopCoroutine(timeoutCoroutine);
@@ -107,29 +110,10 @@ public class ComboSystem : MonoBehaviour
         OnComboChanged?.Invoke();
     }
 
-    /// <summary>Updates the cached rank index based on the current hit count.</summary>
+    /// <summary>Determine the rank index (0‑4) from the hit count.</summary>
     private void UpdateRank()
     {
-        // If thresholds are not set correctly, default to D
-        if (rankThresholds.Length == 0)
-        {
-            currentRankIndex = 0;
-            return;
-        }
-
-        int rank = 0; // Default to D
-
-        for (int i = 0; i < rankThresholds.Length; i++)
-        {
-            if (currentComboCount <= rankThresholds[i])
-            {
-                rank = i;
-                break;
-            }
-        }
-
-        // If we exceeded all thresholds, use the last rank (S)
-        currentRankIndex = Math.Min(rank, rankMultipliers.Length - 1);
+        currentRankIndex = GetRankIndexFromCount(currentComboCount);
     }
 
     /// <summary>Coroutine that resets the combo after a timeout.</summary>
@@ -143,17 +127,22 @@ public class ComboSystem : MonoBehaviour
     #region UI Helpers
     private void UpdateUI()
     {
-        if (comboText == null)
-            return;
+        if (comboText == null) return;
 
-        // Hide when no combo
         bool hasCombo = IsComboActive;
-        comboText.gameObject.SetActive(hasCombo);
 
-        if (!hasCombo) return;
+        // If we’re not in a combo, clear the text and exit early
+        if (!hasCombo)
+        {
+            comboText.text = string.Empty;
+            return;
+        }
 
-        string rankStr = Enum.GetName(typeof(ComboRank), CurrentRank);
-        comboText.text = string.Format(comboDisplayFormat, currentComboCount, rankStr);
+        // If we have a combo show it
+        string rankStr = GetRankFromCount(currentComboCount);
+        int displayCnt = Mathf.Min(currentComboCount, maxComboCount);
+
+        comboText.text = string.Format(comboDisplayFormat, displayCnt, rankStr);
         UpdateUIColors(rankStr);
     }
 
@@ -194,5 +183,39 @@ public class ComboSystem : MonoBehaviour
                 if (rankThresholds[i] == 0) rankThresholds[i] = (i + 1) * 2;
         }
     }
+    #endregion
+
+    #region Rank Helpers (the requested method)
+
+    /// <summary>
+    /// Returns the rank string ("D","C","B","A" or "S") for a given hit count.
+    /// </summary>
+    private string GetRankFromCount(int count)
+    {
+        if (count <= 0) return "";
+
+        // Walk through thresholds: D, C, B, A
+        for (int i = 0; i < rankThresholds.Length; i++)
+            if (count <= rankThresholds[i])
+                return ((ComboRank)i).ToString();   // e.g. ComboRank.C -> "C"
+
+        // Anything beyond the last threshold is rank S
+        return ComboRank.S.ToString();
+    }
+
+    /// <summary>
+    /// Same logic as GetRankFromCount but returns the enum index (0‑4) for internal use.
+    /// </summary>
+    private int GetRankIndexFromCount(int count)
+    {
+        if (count <= 0) return 0;
+
+        for (int i = 0; i < rankThresholds.Length; i++)
+            if (count <= rankThresholds[i])
+                return i;
+
+        return (int)ComboRank.S;
+    }
+
     #endregion
 }

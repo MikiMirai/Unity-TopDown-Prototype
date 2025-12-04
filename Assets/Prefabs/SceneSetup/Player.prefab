@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2251467959685158353}
+  - component: {fileID: 5101594934232772508}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -32,6 +33,32 @@ Transform:
   - {fileID: 368215826535310250}
   m_Father: {fileID: 6099413615400031947}
   m_LocalEulerAnglesHint: {x: -21.771, y: -31.033, z: -21.138}
+--- !u!114 &5101594934232772508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2954707677687113968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be87635c0abe77f4faaabdcbd8e92059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComboSystem
+  comboTimeout: 2
+  maxComboCount: 120
+  rankThresholds: 01000000030000000500000008000000
+  rankMultipliers:
+  - 1
+  - 1.5
+  - 2
+  - 2.5
+  - 3.5
+  comboText: {fileID: 0}
+  comboDisplayFormat: 'Combo: {0} [{1}]'
+  OnComboChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3939753697381857543
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +695,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2251467959685158353}
     m_Modifications:
+    - target: {fileID: 871527435664079037, guid: 1aed843d78e440a458b0ddf3635028f4, type: 3}
+      propertyPath: comboSystem
+      value: 
+      objectReference: {fileID: 5101594934232772508}
     - target: {fileID: 871527435664079037, guid: 1aed843d78e440a458b0ddf3635028f4, type: 3}
       propertyPath: weaponMask.m_Bits
       value: 513
