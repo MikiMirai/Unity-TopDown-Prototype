@@ -5,6 +5,7 @@ public class DamageDealer : MonoBehaviour
 {
     List<GameObject> targetsHit;
 
+    [SerializeField] private ComboSystem comboSystem;
     [SerializeField] private float weaponLength;
     [SerializeField] private int weaponDamage = 1;
     [SerializeField] private LayerMask weaponMask;
@@ -24,6 +25,11 @@ public class DamageDealer : MonoBehaviour
                 Debug.Log("Dealt Damage!");
                 health.TakeDamage(weaponDamage);
                 targetsHit.Add(hit.transform.gameObject);
+
+                if (comboSystem != null)
+                {
+                    comboSystem.RegisterLightAttack();
+                }
             }
         }
     }
