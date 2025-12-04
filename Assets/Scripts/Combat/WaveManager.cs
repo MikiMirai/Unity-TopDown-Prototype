@@ -282,6 +282,10 @@ public class WaveManager : MonoBehaviour
 
             // Spawn the next queued enemy
             SpawnEnemyAtFreePoint();
+
+            Debug.Log($"!--- Wait before new enemy is spawned. Remaining {_pendingSpawns.Count}");
+            // Wait before a new enemy can be spawned
+            yield return new WaitForSeconds(spawnDelay);
         }
         _watcherRunning = false;
     }
