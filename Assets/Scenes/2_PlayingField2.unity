@@ -1181,6 +1181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf36627033bb44f40943c239ce7ce3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelExit
+  loadNextLevel: 1
+  levelLoader: {fileID: 1783948314}
   winPanel: {fileID: 1912248655}
   HUD: {fileID: 58496741}
 --- !u!65 &164058414
