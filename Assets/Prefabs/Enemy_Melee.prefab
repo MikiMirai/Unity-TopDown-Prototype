@@ -235,6 +235,7 @@ MonoBehaviour:
   maxHealth: 5
   isEnemyObject: 1
   currentHealth: 0
+  allowNormalDeath: 0
   godMode: 0
   onEnemyDeath:
     m_PersistentCalls:
@@ -270,9 +271,11 @@ MonoBehaviour:
   deathTime: 0
   playerTag: Player
   attackCD: 3
+  attackDelay: 0.5
   attackRange: 2.2
-  aggroRange: 8
+  aggroRange: 12
   damageDuration: 0
+  timePassed: 0
 --- !u!136 &6337306454107994446
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -548,6 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7cdaf50da9a7043851f34a05e98fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
+  comboSystem: {fileID: 0}
   weaponLength: 1.3
   weaponDamage: 1
   weaponMask:
