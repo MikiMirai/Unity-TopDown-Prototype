@@ -7264,6 +7264,10 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 773476673}
+    - target: {fileID: 5101594934232772508, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
+      propertyPath: comboText
+      value: 
+      objectReference: {fileID: 1266524286}
     - target: {fileID: 5939621738289737160, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
       propertyPath: dashUI
       value: 
@@ -7312,48 +7316,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8642997846196315259, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
-      propertyPath: comboSystem
-      value: 
-      objectReference: {fileID: 564053651}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2954707677687113968, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 564053651}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
---- !u!1 &564053650 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2954707677687113968, guid: bc609d0164ae7194b841dff958ac855b, type: 3}
-  m_PrefabInstance: {fileID: 564053649}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &564053651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564053650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be87635c0abe77f4faaabdcbd8e92059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ComboSystem
-  comboTimeout: 2
-  rankThresholds: 01000000030000000500000008000000
-  rankMultipliers:
-  - 1
-  - 1.5
-  - 2
-  - 2.5
-  - 3.5
-  comboText: {fileID: 1266524286}
-  comboDisplayFormat: 'Combo: {0} [{1}]'
-  OnComboChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &568117690
 GameObject:
   m_ObjectHideFlags: 0
